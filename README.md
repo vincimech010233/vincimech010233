@@ -13,5 +13,6 @@
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
 ![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)
 
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=condorcoders&include_all_commits=true&count_private=true&show_icons=true&line_height=20&title_color=2B5BBD&icon_color=1124BB&text_color=A1A1A1&bg_color=0,000000,130F40" alt="my Github Stats"/>
 
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vincimech010233&layout=compact)
+![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=vincimech010233&layout=compact&theme=dark)

@@ -6,21 +6,15 @@
 
 Desarrollo herramientas prácticas y proyectos técnicos reproducibles en seguridad defensiva, automatización, física e ingeniería. Mi trabajo actual prioriza soluciones pequeñas, comprensibles, verificables y fáciles de mejorar.
 
-## Áreas de trabajo
+## Mapa del portfolio
 
-- Herramientas de seguridad defensiva, análisis de registros y laboratorios controlados
-- Automatización con Python y shell
-- Computación científica y experimentos numéricos
-- Estudios y simulaciones de computación cuántica
-- Cálculos de ingeniería mecánica e industrial
-
-## Proyectos seleccionados
-
-- [Ciberseguridad](https://github.com/vincimech010233/cibersecurity) — scripts defensivos, laboratorios controlados y ejercicios de análisis de registros.
-- [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) — experimento en TypeScript/React que combina ajedrez con estados probabilísticos.
-- [Quantum Computing Journey](https://github.com/vincimech010233/QuantumComputingJourney-) — notebooks y experimentos con Qiskit y PennyLane.
-- [Física](https://github.com/vincimech010233/physic) — trabajos de física, MATLAB/Simulink y computación científica.
-- [Python](https://github.com/vincimech010233/python) — automatización, tratamiento de datos y prototipos técnicos.
+| Área | Contenido |
+| --- | --- |
+| [Programación](programacion/README.md) | Python, JavaScript, Quantum Chess, estudios de computación cuántica y borradores de IA eficiente. |
+| [Física](fisica/README.md) | Física y computación científica, junto con una nota conceptual sobre microgravedad. |
+| [Ingeniería mecánica](ingenieria-mecanica/README.md) | Material de ingeniería mecánica e industrial. |
+| [Ciberseguridad](ciberseguridad/README.md) | Herramientas defensivas, laboratorios controlados y un caso ficticio de metodología de evaluación. |
+| [OSINT](osint/README.md) | Alcance y estándares para futuras publicaciones de investigación en fuentes abiertas. |
 
 ## Servicios
 

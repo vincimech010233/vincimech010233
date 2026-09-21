@@ -37,4 +37,4 @@ Python · Bash · TypeScript/JavaScript · C · Rust · SQL · MATLAB/Simulink �
 ## Contacto
 
 **Vincimech**  
-[jandro.derojas@gmail.com](mailto:jand​ro.derojas@gmail.com)
+[jandro.derojas@gmail.com](mailto:jandro.derojas@gmail.com)

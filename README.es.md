@@ -22,6 +22,10 @@ Desarrollo herramientas prácticas y proyectos técnicos reproducibles en seguri
 - [Física](https://github.com/vincimech010233/physic) — trabajos de física, MATLAB/Simulink y computación científica.
 - [Python](https://github.com/vincimech010233/python) — automatización, tratamiento de datos y prototipos técnicos.
 
+## Notas técnicas seleccionadas
+
+En [portfolio/](portfolio/README.md) hay una selección de escritura técnica: un caso ficticio de seguridad defensiva y borradores de investigación independientes. Distinguen hipótesis de resultados verificados y no implican afiliación con ninguna institución.
+
 ## Servicios
 
 - Automatización con Python y shell

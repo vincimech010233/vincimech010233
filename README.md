@@ -22,6 +22,10 @@ I build practical tools and reproducible technical projects across defensive cyb
 - [Physics](https://github.com/vincimech010233/physic) — physics, MATLAB/Simulink, and scientific-computing work.
 - [Python](https://github.com/vincimech010233/python) — automation, data processing, and technical prototypes.
 
+## Curated technical notes
+
+Selected writing is available in [portfolio/](portfolio/README.md). It contains a fictional defensive-security case study and independent research drafts. They distinguish hypotheses from verified results and do not imply affiliation with any institution.
+
 ## Services
 
 - Python and shell automation

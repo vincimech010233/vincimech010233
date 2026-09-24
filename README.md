@@ -10,7 +10,7 @@ I build practical tools and reproducible technical projects across defensive cyb
 
 | Area | Contents |
 | --- | --- |
-| [Programming](programacion/README.md) | Python, JavaScript, Quantum Chess, quantum-computing studies, and research drafts on efficient AI. |
+| [Programming](programacion/README.md) | Python, JavaScript, Quantum Chess, quantum-computing studies, and [NeuroControl-Kev](https://github.com/vincimech010233/NeuroControl-Kev-Lab), a reproducible CPU research prototype. |
 | [Physics](fisica/README.md) | Physics and scientific-computing work, plus a conceptual microgravity research note. |
 | [Mechanical engineering](ingenieria-mecanica/README.md) | Mechanical and industrial-engineering material. |
 | [Cybersecurity](ciberseguridad/README.md) | Defensive tooling, controlled labs, and a fictional assessment-methodology case study. |

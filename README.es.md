@@ -10,7 +10,7 @@ Desarrollo herramientas prácticas y proyectos técnicos reproducibles en seguri
 
 | Área | Contenido |
 | --- | --- |
-| [Programación](programacion/README.md) | Python, JavaScript, Quantum Chess, estudios de computación cuántica y borradores de IA eficiente. |
+| [Programación](programacion/README.md) | Python, JavaScript, Quantum Chess, estudios de computación cuántica y [NeuroControl-Kev](https://github.com/vincimech010233/NeuroControl-Kev-Lab), un prototipo de investigación reproducible en CPU. |
 | [Física](fisica/README.md) | Física y computación científica, junto con una nota conceptual sobre microgravedad. |
 | [Ingeniería mecánica](ingenieria-mecanica/README.md) | Material de ingeniería mecánica e industrial. |
 | [Ciberseguridad](ciberseguridad/README.md) | Herramientas defensivas, laboratorios controlados y un caso ficticio de metodología de evaluación. |

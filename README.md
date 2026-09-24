@@ -14,7 +14,7 @@ Projects are linked here by area; each area page has its full repository list an
 - **[Physics](fisica/README.md):** [Physics and Engineering Computing](https://github.com/vincimech010233/physic) · [Axiomize scientific modeling](https://github.com/vincimech010233/axiomize-quantum-skills-2.0).
 - **[Mechanical engineering](ingenieria-mecanica/README.md):** [Physics and Engineering Computing](https://github.com/vincimech010233/physic) (shared multidisciplinary repository).
 - **[Cybersecurity](ciberseguridad/README.md):** [cibersecurity](https://github.com/vincimech010233/cibersecurity).
-- **[OSINT](osint/README.md):** no dedicated public repository yet; the area page documents the publication and evidence standards.
+- **[OSINT](osint/README.md):** [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) — a reproducible Python CLI for collecting public software project evidence with source provenance.
 
 ## Services
 

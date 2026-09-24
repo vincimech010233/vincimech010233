@@ -8,13 +8,13 @@ I build practical tools and reproducible technical projects across defensive cyb
 
 ## Portfolio map
 
-| Area | Contents |
-| --- | --- |
-| [Programming](programacion/README.md) | Python, JavaScript, Quantum Chess, quantum-computing studies, and [NeuroControl-Kev](https://github.com/vincimech010233/NeuroControl-Kev-Lab), a reproducible CPU research prototype. |
-| [Physics](fisica/README.md) | Physics and scientific-computing work, plus a conceptual microgravity research note. |
-| [Mechanical engineering](ingenieria-mecanica/README.md) | Mechanical and industrial-engineering material. |
-| [Cybersecurity](ciberseguridad/README.md) | Defensive tooling, controlled labs, and a fictional assessment-methodology case study. |
-| [OSINT](osint/README.md) | Scope and standards for future open-source research publications. |
+Projects are linked here by area; each area page has its full repository list and short descriptions.
+
+- **[Programming](programacion/README.md):** [Python](https://github.com/vincimech010233/python) · [JavaScript](https://github.com/vincimech010233/javascript) · [Rust/C/Assembly](https://github.com/vincimech010233/rust_asm) · [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) · [Quantum Computing Journey](https://github.com/vincimech010233/QuantumComputingJourney-) · [Machine Learning Basics](https://github.com/vincimech010233/MachineLearningBasics) · [Axiomize](https://github.com/vincimech010233/axiomize-quantum-skills-2.0) · [Drosophila Whole-Brain State Decomposition](https://github.com/vincimech010233/drosophila-whole-brain-state-decomposition) · [NeuroControl-Kev](https://github.com/vincimech010233/NeuroControl-Kev-Lab).
+- **[Physics](fisica/README.md):** [Physics and Engineering Computing](https://github.com/vincimech010233/physic) · [Axiomize scientific modeling](https://github.com/vincimech010233/axiomize-quantum-skills-2.0).
+- **[Mechanical engineering](ingenieria-mecanica/README.md):** [Physics and Engineering Computing](https://github.com/vincimech010233/physic) (shared multidisciplinary repository).
+- **[Cybersecurity](ciberseguridad/README.md):** [cibersecurity](https://github.com/vincimech010233/cibersecurity).
+- **[OSINT](osint/README.md):** no dedicated public repository yet; the area page documents the publication and evidence standards.
 
 ## Services
 

@@ -1,5 +1,7 @@
 # Ingeniería mecánica
 
-El trabajo de ingeniería mecánica e industrial se encuentra actualmente en [physic](https://github.com/vincimech010233/physic), junto con cálculos y material de computación científica relacionado.
+## Repositorio relacionado
+
+- [Physics and Engineering Computing](https://github.com/vincimech010233/physic) — reúne material de física, MATLAB/Simulink, modelado de circuitos y baterías, notebooks satelitales y ejercicios introductorios de CAD. Se enlaza también desde Física porque es un repositorio multidisciplinar.
 
 Esta sección se mantendrá como índice independiente para separar en el futuro los proyectos mecánicos con instrucciones de reproducción y procedencia claramente documentada.

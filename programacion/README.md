@@ -7,6 +7,9 @@
 - [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) — experimento TypeScript/React con mecánicas de ajedrez probabilístico.
 - [Quantum Computing Journey](https://github.com/vincimech010233/QuantumComputingJourney-) — estudios y notebooks con Qiskit y PennyLane.
 - [Machine Learning Basics](https://github.com/vincimech010233/MachineLearningBasics) — ejercicios y notas de aprendizaje automático.
+- [Rust, C and Assembly Exercises](https://github.com/vincimech010233/rust_asm) — archivo didáctico de ejercicios de bajo nivel.
+- [Axiomize Quantum Skills 2.0](https://github.com/vincimech010233/axiomize-quantum-skills-2.0) — motor Python de modelado científico y razonamiento ramificado inspirado en conceptos cuánticos.
+- [Drosophila Whole-Brain State Decomposition](https://github.com/vincimech010233/drosophila-whole-brain-state-decomposition) — software y análisis observacional reproducible de codificación neural-conductual; incluye límites explícitos sobre lo que los datos permiten concluir.
 - [NeuroControl-Kev Lab](https://github.com/vincimech010233/NeuroControl-Kev-Lab) — experimento reproducible solo en CPU que compara el backend de selección de acciones Kev con una base de reglas tras una barrera de seguridad simulada.
 
 ## Notas de investigación

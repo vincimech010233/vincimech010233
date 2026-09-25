@@ -15,6 +15,7 @@ Projects are linked here by area; each area page has its full repository list an
 - **[Mechanical engineering](ingenieria-mecanica/README.md):** [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) · [Physics and Engineering Computing](https://github.com/vincimech010233/physic) (shared multidisciplinary repository).
 - **[Cybersecurity](ciberseguridad/README.md):** [cibersecurity](https://github.com/vincimech010233/cibersecurity).
 - **[OSINT](osint/README.md):** [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) — a reproducible Python CLI for collecting public software project evidence with source provenance.
+- **[Linux / Systems](linux-systems/README.md):** [Linux Resource Benchmark](https://github.com/vincimech010233/linux-resource-benchmark) — reproducible CLI for controlled Linux CPU, memory, disk and process microbenchmarks with statistical reports.
 
 ## Services
 

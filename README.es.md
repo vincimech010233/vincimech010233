@@ -1,21 +1,25 @@
 # Vincimech
 
-**Portfolio técnico · Ciberseguridad · Software · Computación científica**
+**Portfolio técnico · Desarrollo de software · QA · Linux · Seguridad defensiva · Computación científica**
 
 [English](README.md)
 
-Desarrollo herramientas prácticas y proyectos técnicos reproducibles en seguridad defensiva, automatización, física e ingeniería. Mi trabajo actual prioriza soluciones pequeñas, comprensibles, verificables y fáciles de mejorar.
+Desarrollo herramientas prácticas y proyectos técnicos reproducibles en software, seguridad defensiva, física e ingeniería. Las páginas de cada área distinguen el trabajo realizado de las competencias que aún estoy desarrollando.
 
 ## Mapa del portfolio
 
-Aquí están los proyectos agrupados por área; cada página de área contiene la lista completa de repositorios y una breve descripción.
+| Área | Proyectos representativos |
+| --- | --- |
+| **[Desarrollo de software](programacion/README.md)** | [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) · [simdjson Streaming Complexity Study](https://github.com/vincimech010233/simdjson-streaming-complexity-study) · [Python](https://github.com/vincimech010233/python) · [JavaScript](https://github.com/vincimech010233/javascript) |
+| **[QA y pruebas de software](qa-testing/README.md)** | [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) (pruebas numéricas y CI) · [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) (datos de prueba locales y CI) |
+| **[Soporte de producto y aplicaciones](product-application-support/README.md)** | [Linux Resource Benchmark](https://github.com/vincimech010233/linux-resource-benchmark) (medición e informes del sistema) · [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) (errores de API documentados). Son proyectos técnicos relacionados, todavía no un portfolio de incidencias de soporte. |
+| **[Linux / Sistemas y soporte IT](linux-systems/README.es.md)** | [Linux Resource Benchmark](https://github.com/vincimech010233/linux-resource-benchmark) (diagnóstico acotado de CPU, memoria, disco y procesos). Aún no se muestran tickets ni atención a usuarios. |
+| **[Ciberseguridad / SOC](ciberseguridad/README.md)** | [Defensive Security Lab](https://github.com/vincimech010233/cibersecurity) (registros de autenticación simulados y análisis de intentos fallidos) |
+| **[OSINT](osint/README.md)** | [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) (metadatos públicos y procedencia de fuentes) |
+| **[Física / Computación científica](fisica/README.md)** | [High-Precision TIDL Simulator](https://github.com/vincimech010233/high-precision-tidl-simulator) (simulación de software sin validación con hardware) · [physic](https://github.com/vincimech010233/physic) |
+| **[Ingeniería mecánica](ingenieria-mecanica/README.md)** | [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) (análisis hipotético de holgura y tolerancias) |
 
-- **[Programación](programacion/README.md):** [Python](https://github.com/vincimech010233/python) · [JavaScript](https://github.com/vincimech010233/javascript) · [Rust/C/Assembly](https://github.com/vincimech010233/rust_asm) · [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) · [Quantum Computing Journey](https://github.com/vincimech010233/QuantumComputingJourney-) · [Machine Learning Basics](https://github.com/vincimech010233/MachineLearningBasics) · [NeuroControl-Kev](https://github.com/vincimech010233/NeuroControl-Kev-Lab).
-- **[Física](fisica/README.md):** [Physics and Engineering Computing](https://github.com/vincimech010233/physic) · [High-Precision TIDL Simulator](https://github.com/vincimech010233/high-precision-tidl-simulator) — simulación de software en Python/Rust para física computacional, temporización de precisión, metrología y análisis estadístico; 100 ps es un objetivo de diseño y no se afirma validación con hardware.
-- **[Ingeniería mecánica](ingenieria-mecanica/README.md):** [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) · [Physics and Engineering Computing](https://github.com/vincimech010233/physic) (repositorio multidisciplinar compartido).
-- **[Ciberseguridad](ciberseguridad/README.md):** [cibersecurity](https://github.com/vincimech010233/cibersecurity).
-- **[OSINT](osint/README.md):** [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) — CLI reproducible en Python para recopilar metadatos públicos de proyectos y registrar la procedencia de cada evidencia.
-- **[Linux / Sistemas](linux-systems/README.es.md):** [Linux Resource Benchmark](https://github.com/vincimech010233/linux-resource-benchmark) — CLI reproducible para medir microbenchmarks controlados de CPU, memoria, disco y procesos en Linux y generar informes estadísticos.
+Cada área contiene más proyectos y notas sobre su alcance. Un proyecto puede aparecer en varias áreas cuando su trabajo publicado demuestra varias competencias.
 
 ## Servicios
 

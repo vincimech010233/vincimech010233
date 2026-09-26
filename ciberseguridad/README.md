@@ -2,7 +2,7 @@
 
 ## Repositorio
 
-- [cibersecurity](https://github.com/vincimech010233/cibersecurity) — herramientas defensivas, ejercicios de análisis de registros y laboratorios controlados.
+- [cibersecurity](https://github.com/vincimech010233/cibersecurity) — analizador de registros simulados con pruebas automáticas y CI. La validación cubre ese analizador; las demás utilidades y laboratorios educativos requieren revisión independiente antes de ejecutarse.
 
 ## Caso de estudio metodológico
 

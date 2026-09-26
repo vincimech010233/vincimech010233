@@ -3,7 +3,7 @@
 ## Repositorios
 
 - [Python](https://github.com/vincimech010233/python) — automatización, tratamiento de datos y prototipos técnicos.
-- [JavaScript](https://github.com/vincimech010233/javascript) — proyectos web y servidor local.
+- [JavaScript](https://github.com/vincimech010233/javascript) — ejercicios web y prototipo de chat local con pruebas de archivos estáticos y entrega de mensajes, ejecutadas también en CI. El ejercicio Marvel queda fuera de la selección por procedencia de imagen no verificada.
 - [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) — experimento TypeScript/React con mecánicas de ajedrez probabilístico.
 - [Quantum Computing Journey](https://github.com/vincimech010233/QuantumComputingJourney-) — estudios y notebooks con Qiskit y PennyLane.
 - [Machine Learning Basics](https://github.com/vincimech010233/MachineLearningBasics) — ejercicios y notas de aprendizaje automático.

@@ -4,7 +4,7 @@
 
 - [Python](https://github.com/vincimech010233/python) — automatización, tratamiento de datos y prototipos técnicos.
 - [JavaScript](https://github.com/vincimech010233/javascript) — ejercicios web y prototipo de chat local con pruebas de archivos estáticos y entrega de mensajes, ejecutadas también en CI. El ejercicio Marvel queda fuera de la selección por procedencia de imagen no verificada.
-- [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) — experimento TypeScript/React con mecánicas de ajedrez probabilístico.
+- [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) — prototipo TypeScript/React de ajedrez probabilístico con 37 pruebas de regresión, invariantes de estado, CI y build reproducible con estilos locales. No es un motor de ajedrez completo.
 - [Quantum Computing Journey](https://github.com/vincimech010233/QuantumComputingJourney-) — estudios y notebooks con Qiskit y PennyLane.
 - [Machine Learning Basics](https://github.com/vincimech010233/MachineLearningBasics) — ejercicios y notas de aprendizaje automático.
 - [Rust, C and Assembly Exercises](https://github.com/vincimech010233/rust_asm) — archivo didáctico de ejercicios de bajo nivel.

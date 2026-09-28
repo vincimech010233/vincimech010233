@@ -1,11 +1,12 @@
-# QA y pruebas de software / Software Testing
+# QA & Software Testing
 
-[Volver al portfolio](../README.md) · [Volver al portfolio en español](../README.es.md)
+[Portfolio](../README.md) · [Español](README.es.md)
 
-## Pruebas y verificación publicadas
+## Published tests and verification
 
-- [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) — pruebas con cálculos comprobables a mano, validación de CSV y límites, simulación reproducible y casos Cp/Cpk conocidos. Ejecuta pytest y Ruff en CI con Python 3.10 y 3.12.
-- [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) — pruebas con datos locales y colectores simulados sin acceso a la red; pytest y Ruff en GitHub Actions.
-- [simdjson Streaming Complexity Study](https://github.com/vincimech010233/simdjson-streaming-complexity-study) — experimento de rendimiento con grupos de control, mediciones repetidas y revisión de una anomalía que no se reprodujo. Es verificación experimental de rendimiento, no una suite de QA funcional.
+- [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) — hand-checkable calculations, CSV and boundary validation, reproducible simulation and known Cp/Cpk cases; pytest and Ruff in CI on Python 3.10 and 3.12.
+- [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) — tests with local fixtures and simulated collectors without network access; pytest and Ruff in GitHub Actions.
+- [simdjson Streaming Complexity Study](https://github.com/vincimech010233/simdjson-streaming-complexity-study) — performance experiment with control groups, repeated measurements and investigation of an anomaly that did not reproduce; experimental verification rather than functional QA.
+- [Linux Application Incident Lab](https://github.com/vincimech010233/linux-application-incident-lab) — executed manual case with expected versus observed results, HTTP 502 reproduction, incident report and before/after regression verification in a synthetic local lab.
 
-Esta área documenta pruebas de proyectos propios. Todavía no contiene casos de prueba manuales, informes de defectos o una campaña de regresión para un producto externo.
+Manual QA here concerns an original synthetic lab. It does not represent an external product test campaign or a real customer defect.

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Explore how input uncertainty propagates through a mathematical model." />
+    <title>UncertaintyLab — Monte Carlo workspace</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script type="module" src="/app.mjs"></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="hero">
+        <div class="brand-mark" aria-hidden="true">U</div>
+        <p class="eyebrow">LOCAL SCIENTIFIC WORKSPACE</p>
+        <h1>UncertaintyLab</h1>
+        <p class="subtitle">Explore how input uncertainty propagates through a mathematical model</p>
+      </header>
+
+      <p class="assumption-note">
+        <span class="note-dot" aria-hidden="true"></span>
+        Inputs are modeled as independent normal distributions. Each ± uncertainty is one standard deviation (1σ).
+      </p>
+
+      <section class="input-card" aria-labelledby="inputs-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">MODEL</p>
+            <h2 id="inputs-heading">Input variables</h2>
+          </div>
+          <span id="model-badge" class="example-tag">BUILT-IN EXAMPLE</span>
+        </div>
+
+        <div class="table-actions">
+          <span id="variable-count" class="variable-count" aria-live="polite">4 of 16 variables</span>
+          <button id="add-variable-button" class="secondary-button" type="button">Add variable</button>
+        </div>
+
+        <div class="table-scroll">
+          <table class="variable-table">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Nominal value</th>
+                <th scope="col">Uncertainty (1σ)</th>
+                <th scope="col">Unit</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="variable-rows">
+              <tr class="variable-row" data-row-id="row-1">
+                <th scope="row"><input class="variable-name-input" type="text" value="length" autocomplete="off" spellcheck="false" aria-label="length variable name" /></th>
+                <td><input class="numeric-input nominal-input" type="number" step="any" value="10.0" aria-label="length nominal value" /></td>
+                <td><input class="numeric-input sigma-input" type="number" step="any" min="0" value="0.2" aria-label="length uncertainty, one standard deviation" /></td>
+                <td><input class="unit-input" type="text" value="cm" aria-label="length unit" /></td>
+                <td class="row-action-cell"><button class="remove-row-button" type="button" aria-label="Remove length">Remove</button></td>
+              </tr>
+              <tr class="variable-row" data-row-id="row-2">
+                <th scope="row"><input class="variable-name-input" type="text" value="width" autocomplete="off" spellcheck="false" aria-label="width variable name" /></th>
+                <td><input class="numeric-input nominal-input" type="number" step="any" value="5.0" aria-label="width nominal value" /></td>
+                <td><input class="numeric-input sigma-input" type="number" step="any" min="0" value="0.1" aria-label="width uncertainty, one standard deviation" /></td>
+                <td><input class="unit-input" type="text" value="cm" aria-label="width unit" /></td>
+                <td class="row-action-cell"><button class="remove-row-button" type="button" aria-label="Remove width">Remove</button></td>
+              </tr>
+              <tr class="variable-row" data-row-id="row-3">
+                <th scope="row"><input class="variable-name-input" type="text" value="thickness" autocomplete="off" spellcheck="false" aria-label="thickness variable name" /></th>
+                <td><input class="numeric-input nominal-input" type="number" step="any" value="1.0" aria-label="thickness nominal value" /></td>
+                <td><input class="numeric-input sigma-input" type="number" step="any" min="0" value="0.05" aria-label="thickness uncertainty, one standard deviation" /></td>
+                <td><input class="unit-input" type="text" value="cm" aria-label="thickness unit" /></td>
+                <td class="row-action-cell"><button class="remove-row-button" type="button" aria-label="Remove thickness">Remove</button></td>
+              </tr>
+              <tr class="variable-row" data-row-id="row-4">
+                <th scope="row"><input class="variable-name-input" type="text" value="density" autocomplete="off" spellcheck="false" aria-label="density variable name" /></th>
+                <td><input class="numeric-input nominal-input" type="number" step="any" value="7.80" aria-label="density nominal value" /></td>
+                <td><input class="numeric-input sigma-input" type="number" step="any" min="0" value="0.10" aria-label="density uncertainty, one standard deviation" /></td>
+                <td><input class="unit-input" type="text" value="g/cm³" aria-label="density unit" /></td>
+                <td class="row-action-cell"><button class="remove-row-button" type="button" aria-label="Remove density">Remove</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="expression-field">
+          <label for="expression">Mathematical expression</label>
+          <input id="expression" class="expression-input" type="text" value="length * width * thickness * density" maxlength="512" spellcheck="false" aria-describedby="expression-help" />
+          <p id="expression-help" class="field-help">Variables, + − * / **, parentheses, abs, sqrt, exp, log, sin, cos. Numeric literals and arbitrary code are not allowed.</p>
+        </div>
+
+        <div class="run-row">
+          <button id="run-button" class="run-button" type="button">
+            <span class="run-icon" aria-hidden="true">▶</span>
+            <span>Run Simulation</span>
+          </button>
+          <p id="run-status" class="run-status" role="status" aria-live="polite">Ready to run locally</p>
+        </div>
+      </section>
+
+      <section class="results-section" aria-labelledby="results-heading" aria-live="polite">
+        <div class="results-heading">
+          <div>
+            <p class="eyebrow">OUTPUT</p>
+            <h2 id="results-heading">Mass (g)</h2>
+          </div>
+          <p id="sample-meta" class="sample-meta" hidden></p>
+        </div>
+
+        <div id="empty-state" class="empty-state">
+          <div class="empty-glyph" aria-hidden="true">∿</div>
+          <p>Your output distribution will appear here.</p>
+          <span>Run the example to see how its input uncertainty propagates.</span>
+        </div>
+
+        <p id="run-error" class="run-error" role="alert" hidden></p>
+
+        <div id="result-layout" class="results-grid" hidden>
+          <div class="histogram-card">
+            <div id="histogram" class="histogram-container"></div>
+          </div>
+          <aside class="summary-card" aria-labelledby="summary-heading">
+            <div class="summary-heading-row">
+              <p class="eyebrow">SIMULATION SUMMARY</p>
+              <span class="summary-seed">REPRODUCIBLE</span>
+            </div>
+            <h3 id="summary-heading">Output statistics</h3>
+            <dl class="summary-list">
+              <div class="summary-stat summary-stat-primary">
+                <dt>Mean</dt>
+                <dd id="mean-value">—</dd>
+              </div>
+              <div class="summary-stat">
+                <dt>Standard deviation</dt>
+                <dd id="sd-value">—</dd>
+              </div>
+              <div class="summary-stat">
+                <dt>95% percentile interval</dt>
+                <dd id="interval-value">—</dd>
+              </div>
+              <div class="summary-stat summary-meta-stat">
+                <dt>Monte Carlo samples</dt>
+                <dd id="count-value">—</dd>
+              </div>
+              <div class="summary-stat summary-meta-stat">
+                <dt>Seed</dt>
+                <dd id="seed-value">—</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <span>Everything runs on this device.</span>
+        <span>No input data is uploaded or saved.</span>
+      </footer>
+    </main>
+  </body>
+</html>

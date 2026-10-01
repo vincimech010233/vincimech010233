@@ -4,6 +4,7 @@
 
 ## Repositorios
 
+- [UncertaintyLab](../uncertaintylab/README.md).
 - [Python](https://github.com/vincimech010233/python) — automatización, tratamiento de datos y prototipos técnicos.
 - [JavaScript](https://github.com/vincimech010233/javascript) — ejercicios web y prototipo de chat local con pruebas de archivos estáticos y entrega de mensajes, ejecutadas también en CI. El ejercicio Marvel queda fuera de la selección por procedencia de imagen no verificada.
 - [Quantum Chess](https://github.com/vincimech010233/Quantum-Chess) — prototipo TypeScript/React de ajedrez probabilístico con 37 pruebas de regresión, invariantes de estado, CI y build reproducible con estilos locales. No es un motor de ajedrez completo.

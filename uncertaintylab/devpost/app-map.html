@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Offline code route and architecture guide for UncertaintyLab." />
+  <title>UncertaintyLab — App Map</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #24352f;
+      --muted: #5e7069;
+      --line: #d8e2dc;
+      --paper: #f5f6f0;
+      --card: #fff;
+      --teal: #176f65;
+      --soft: #e8f2ed;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.55; }
+    main { width: min(100% - 32px, 1020px); margin: 36px auto 56px; }
+    header { margin-bottom: 24px; }
+    .eyebrow { color: var(--teal); font-size: 0.72rem; font-weight: 750; letter-spacing: 0.12em; text-transform: uppercase; }
+    h1 { margin: 5px 0 8px; font-size: clamp(1.9rem, 5vw, 2.7rem); line-height: 1.1; letter-spacing: -0.04em; }
+    h2 { margin: 0 0 12px; font-size: 1.18rem; }
+    h3 { margin: 0 0 7px; font-size: 1rem; }
+    p { margin: 0 0 10px; }
+    .lede { max-width: 70ch; color: var(--muted); }
+    .snapshot { display: inline-block; margin-top: 4px; padding: 4px 9px; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--muted); font: 0.75rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    section, footer { margin-top: 16px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+    .diagram-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; background: #fbfcf9; }
+    .diagram-scroll:focus-visible { outline: 3px solid #9bd1c4; outline-offset: 3px; }
+    .flow { display: block; width: 100%; height: auto; }
+    .flow-wide { min-width: 860px; }
+    .flow-narrow { display: none; }
+    .flow-box { fill: #fff; stroke: #bfcfc7; stroke-width: 2; }
+    .flow-accent { fill: var(--soft); stroke: #8ab9a8; stroke-width: 2; }
+    .flow-arrow { fill: none; stroke: #647a70; stroke-width: 2.5; marker-end: url(#arrow); }
+    .flow-title { fill: var(--ink); font-size: 16px; font-weight: 700; }
+    .flow-copy { fill: var(--muted); font-size: 12px; }
+    .route { display: grid; gap: 10px; counter-reset: stop; margin: 0; padding: 0; list-style: none; }
+    .route li { position: relative; padding: 13px 15px 13px 50px; border: 1px solid var(--line); border-radius: 10px; background: #fbfcfa; counter-increment: stop; }
+    .route li::before { content: counter(stop); position: absolute; inset: 13px auto auto 14px; display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; background: var(--soft); color: var(--teal); font-size: 0.8rem; font-weight: 750; }
+    code, kbd { border-radius: 4px; background: #edf2ee; color: #26463e; padding: 1px 5px; font: 0.88em ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; overflow-wrap: anywhere; }
+    .pointers { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+    .pointer { padding: 13px; border-left: 3px solid #78a99a; border-radius: 5px; background: #f8faf7; }
+    .pointer p { margin: 4px 0 0; color: var(--muted); font-size: 0.92rem; }
+    .note { padding: 13px 15px; border-radius: 8px; background: var(--soft); }
+    .small { color: var(--muted); font-size: 0.88rem; }
+    footer { color: var(--muted); font-size: 0.9rem; }
+    a { color: #125e55; text-underline-offset: 3px; }
+    a:focus-visible { outline: 3px solid #9bd1c4; outline-offset: 3px; }
+    @media (max-width: 620px) {
+      main { width: min(100% - 20px, 1020px); margin-top: 20px; }
+      section, footer { padding: 16px; }
+      .pointers { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 900px) {
+      .flow-wide { display: none; }
+      .flow-narrow { display: block; min-width: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <p class="eyebrow">Code tour · offline reference</p>
+      <h1>UncertaintyLab</h1>
+      <p class="lede">A local browser app that samples uncertain inputs, evaluates a bounded mathematical expression, and shows the output distribution with summary statistics.</p>
+      <span class="snapshot">Source snapshot: 9b0fe6e</span>
+    </header>
+
+    <section aria-labelledby="flow-heading">
+      <h2 id="flow-heading">One run, from click to chart</h2>
+      <div class="diagram-scroll" role="region" aria-label="Scrollable architecture diagram" tabindex="0">
+        <svg class="flow flow-wide" viewBox="0 0 1000 190" role="img" aria-labelledby="flow-title flow-desc">
+          <title id="flow-title">UncertaintyLab run flow</title>
+          <desc id="flow-desc">The user starts a run. The app validates rows and parses the expression, simulates seeded normal samples, calculates statistics and bins, then renders the histogram and summary.</desc>
+          <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,5 L0,10 z" fill="#647a70"></path>
+            </marker>
+          </defs>
+          <path class="flow-arrow" d="M186 94 H214 M382 94 H410 M578 94 H606 M774 94 H802"></path>
+          <rect class="flow-accent" x="18" y="48" width="168" height="92" rx="12"></rect>
+          <text class="flow-title" x="102" y="81" text-anchor="middle">Run Simulation</text>
+          <text class="flow-copy" x="102" y="105" text-anchor="middle">form values</text>
+          <text class="flow-copy" x="102" y="123" text-anchor="middle">public/index.html</text>
+
+          <rect class="flow-box" x="214" y="48" width="168" height="92" rx="12"></rect>
+          <text class="flow-title" x="298" y="81" text-anchor="middle">Validate + parse</text>
+          <text class="flow-copy" x="298" y="105" text-anchor="middle">rows → safe math tree</text>
+          <text class="flow-copy" x="298" y="123" text-anchor="middle">app.mjs · expression.mjs</text>
+
+          <rect class="flow-box" x="410" y="48" width="168" height="92" rx="12"></rect>
+          <text class="flow-title" x="494" y="81" text-anchor="middle">Monte Carlo</text>
+          <text class="flow-copy" x="494" y="105" text-anchor="middle">seed 42 · 50,000 draws</text>
+          <text class="flow-copy" x="494" y="123" text-anchor="middle">simulation.mjs</text>
+
+          <rect class="flow-box" x="606" y="48" width="168" height="92" rx="12"></rect>
+          <text class="flow-title" x="690" y="81" text-anchor="middle">Summarize</text>
+          <text class="flow-copy" x="690" y="105" text-anchor="middle">mean · SD · percentiles</text>
+          <text class="flow-copy" x="690" y="123" text-anchor="middle">30 histogram bins</text>
+
+          <rect class="flow-accent" x="802" y="48" width="180" height="92" rx="12"></rect>
+          <text class="flow-title" x="892" y="81" text-anchor="middle">Visible result</text>
+          <text class="flow-copy" x="892" y="105" text-anchor="middle">SVG chart + summary</text>
+          <text class="flow-copy" x="892" y="123" text-anchor="middle">histogram.mjs · app.mjs</text>
+        </svg>
+        <svg class="flow flow-narrow" viewBox="0 0 360 560" role="img" aria-labelledby="flow-mobile-title flow-mobile-desc">
+          <title id="flow-mobile-title">UncertaintyLab run flow</title>
+          <desc id="flow-mobile-desc">The same run flow in a vertical layout: click Run Simulation, validate and parse, simulate, summarize, and render the chart.</desc>
+          <defs>
+            <marker id="arrow-mobile" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+              <path d="M0,0 L10,5 L0,10 z" fill="#647a70"></path>
+            </marker>
+          </defs>
+          <path class="flow-arrow" d="M180 105 V125 M180 215 V235 M180 325 V345 M180 435 V455" marker-end="url(#arrow-mobile)"></path>
+          <rect class="flow-accent" x="15" y="15" width="330" height="90" rx="12"></rect>
+          <text class="flow-title" x="180" y="47" text-anchor="middle">Run Simulation</text>
+          <text class="flow-copy" x="180" y="72" text-anchor="middle">form values</text>
+          <text class="flow-copy" x="180" y="91" text-anchor="middle">public/index.html</text>
+
+          <rect class="flow-box" x="15" y="125" width="330" height="90" rx="12"></rect>
+          <text class="flow-title" x="180" y="157" text-anchor="middle">Validate + parse</text>
+          <text class="flow-copy" x="180" y="182" text-anchor="middle">rows → safe math tree</text>
+          <text class="flow-copy" x="180" y="201" text-anchor="middle">app.mjs · expression.mjs</text>
+
+          <rect class="flow-box" x="15" y="235" width="330" height="90" rx="12"></rect>
+          <text class="flow-title" x="180" y="267" text-anchor="middle">Monte Carlo</text>
+          <text class="flow-copy" x="180" y="292" text-anchor="middle">seed 42 · 50,000 draws</text>
+          <text class="flow-copy" x="180" y="311" text-anchor="middle">simulation.mjs</text>
+
+          <rect class="flow-box" x="15" y="345" width="330" height="90" rx="12"></rect>
+          <text class="flow-title" x="180" y="377" text-anchor="middle">Summarize</text>
+          <text class="flow-copy" x="180" y="402" text-anchor="middle">mean · SD · percentiles</text>
+          <text class="flow-copy" x="180" y="421" text-anchor="middle">30 histogram bins</text>
+
+          <rect class="flow-accent" x="15" y="455" width="330" height="90" rx="12"></rect>
+          <text class="flow-title" x="180" y="487" text-anchor="middle">Visible result</text>
+          <text class="flow-copy" x="180" y="512" text-anchor="middle">SVG chart + summary</text>
+          <text class="flow-copy" x="180" y="531" text-anchor="middle">histogram.mjs · app.mjs</text>
+        </svg>
+      </div>
+      <p class="small">The Python server returns static files from <code>public/</code> on <code>127.0.0.1</code>. Calculation and rendering stay in the browser; there is no API, database, or browser storage.</p>
+    </section>
+
+    <section aria-labelledby="route-heading">
+      <h2 id="route-heading">A three-stop reference route</h2>
+      <ol class="route">
+        <li><strong>Start at the user action.</strong> In <code>public/index.html</code>, find <code>#run-button</code> and the preloaded form. In <code>public/app.mjs</code>, search for <code>readRows()</code> and <code>handleRun()</code>; the handler coordinates validation, computation, and result visibility.</li>
+        <li><strong>Follow the safe expression path.</strong> In <code>public/expression.mjs</code>, inspect <code>parseExpression()</code> and <code>evaluateExpression()</code>. They accept a bounded math grammar and explicit function allowlist instead of evaluating arbitrary source code.</li>
+        <li><strong>Follow samples to pixels.</strong> In <code>public/simulation.mjs</code>, search <code>runSimulation()</code> and <code>createHistogram()</code>; then open <code>public/histogram.mjs</code> at <code>renderHistogram()</code>. <code>app.mjs</code> writes the numeric summary while the renderer draws the SVG bars and nominal/mean markers.</li>
+      </ol>
+    </section>
+
+    <section aria-labelledby="change-heading">
+      <h2 id="change-heading">To change this, start here</h2>
+      <div class="pointers">
+        <div class="pointer"><h3>Default values and visible wording</h3><p><code>public/index.html</code> contains the initial rows and labels; <code>public/app.mjs</code> contains <code>DEFAULT_EXPRESSION</code> and the built-in mass/unit match.</p></div>
+        <div class="pointer"><h3>Expression grammar</h3><p>Update the tokenizer/parser and allowlisted functions in <code>public/expression.mjs</code>, then extend <code>tests/expression.test.mjs</code> for accepted and rejected syntax.</p></div>
+        <div class="pointer"><h3>Sampling and fixed run settings</h3><p><code>public/simulation.mjs</code> defines <code>SAMPLE_COUNT</code>, <code>RANDOM_SEED</code>, normal sampling, summary statistics, and histogram bins.</p></div>
+        <div class="pointer"><h3>Chart layout and style</h3><p>Change SVG coordinates in <code>public/histogram.mjs</code> and colors/spacing in <code>public/styles.css</code>; check both narrow and wide viewports.</p></div>
+      </div>
+    </section>
+
+    <section aria-labelledby="practice-heading">
+      <h2 id="practice-heading">A practice to reuse</h2>
+      <p class="note"><strong>Turn an important numerical expectation into an observable check.</strong> The scope fixes the rectangle's nominal mass at 390 g; <code>tests/simulation.test.mjs</code> checks that value separately from the random sample mean, and another test checks that seed 42 reproduces a run. On another project, state the invariant first, then test it independently from noisy or probabilistic output.</p>
+      <p class="small">The final browser review also exercised a changed input and an invalid expression; the learner confirmed that edits recalculate and invalid input leaves no stale result. The narrow-chart check compared the measured container width with the SVG viewBox rather than relying on source inspection alone.</p>
+      <p class="small"><strong>Optional transfer reflection:</strong> In a future scientific project, what numerical expectation could you define as an invariant and test separately from probabilistic output?</p>
+    </section>
+
+    <section aria-labelledby="run-heading">
+      <h2 id="run-heading">Run it again</h2>
+      <p>From the repository root, run:</p>
+      <p><code>python3 -m http.server 8000 --bind 127.0.0.1 --directory public</code></p>
+      <p>Open <code>http://127.0.0.1:8000/</code>. Optional calculation tests: <code>node --test tests/*.test.mjs</code>.</p>
+    </section>
+
+    <footer>
+      <p>This offline guide reflects source snapshot <code>9b0fe6e</code>. It is a map, not generated documentation, so it can drift as code changes. Refresh the paths, symbols, and evidence after later edits.</p>
+      <p>No profile details, credentials, external assets, or remote resources are included.</p>
+    </footer>
+  </main>
+</body>
+</html>

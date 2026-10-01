@@ -1,0 +1,20 @@
+# Keep the local learning profile out of project commits.
+/devpost/learner-profile.md
+/devpost/submission-prep.local.md
+/submission-ready/
+
+# Keep local agent instructions and installed Learn Skill Pack tooling out of submissions.
+/.agents/
+/.claude/
+/agent/
+/skills-lock.json
+
+# Local credentials and environment files; keep .env.example secret-free.
+.env
+.env.*
+!.env.example
+
+# Build and editor artifacts.
+__pycache__/
+node_modules/
+.DS_Store

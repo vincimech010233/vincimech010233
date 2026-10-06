@@ -6,6 +6,17 @@ Esta área recoge contribuciones revisadas y aceptadas en proyectos mantenidos p
 
 ## Contribuciones fusionadas
 
+### PlasmaPy — orientación sobre unidades y partículas en `AGENTS.md`
+
+[Pull request #3388](https://github.com/PlasmaPy/PlasmaPy/pull/3388) · [Repositorio original](https://github.com/PlasmaPy/PlasmaPy)
+
+- Abordé el [issue #3285](https://github.com/PlasmaPy/PlasmaPy/issues/3285), que solicitaba orientación breve sobre `astropy.units` y `plasmapy.particles` para `AGENTS.md`, incluidas las entradas de temperatura expresadas en eV y los decoradores `@particle_input` y `@validate_quantities`.
+- Amplié `AGENTS.md` con orientación sobre cantidades con unidades y conversiones; la equivalencia temperatura-energía para argumentos de temperatura que admiten unidades de energía como eV; y el uso de `Particle`, `CustomParticle`, `ParticleList`, `ParticleLike` / `ParticleListLike`, `@particle_input` y `@validate_quantities`.
+- Añadí una entrada al changelog y el alias de contribuidor en `CITATION.cff`. El PR modificó únicamente `AGENTS.md`, `CITATION.cff` y `changelog/3388.internal.rst`; su alcance es la guía del repositorio y los metadatos de contribución, sin cambios al código de ejecución de PlasmaPy.
+- La persona mantenedora aprobó el PR y sugirió un ajuste menor de redacción antes de fusionarlo. Se incorporó a `main` de upstream el 2026-10-05.
+
+**Evidencia (VERIFIED):** [diff del PR](https://github.com/PlasmaPy/PlasmaPy/pull/3388/files) · [commit de merge](https://github.com/PlasmaPy/PlasmaPy/commit/5990ca662b6aab57ff1dfd62bdc4256ec13ec63c) · [issue que motivó el cambio](https://github.com/PlasmaPy/PlasmaPy/issues/3285)
+
 ### Axiomize Quantum Skills 2.0 — cobertura de regresión del oráculo numérico
 
 [Pull request #11](https://github.com/Furox-Art/axiomize-quantum-skills-2.0/pull/11) · [Repositorio original](https://github.com/Furox-Art/axiomize-quantum-skills-2.0)

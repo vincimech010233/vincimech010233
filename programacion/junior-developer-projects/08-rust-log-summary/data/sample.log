@@ -1,0 +1,5 @@
+2026-01-01 INFO service started
+2026-01-01 WARN retrying request
+2026-01-01 ERROR disk full
+2026-01-01 ERROR disk full
+2026-01-01 INFO service recovered

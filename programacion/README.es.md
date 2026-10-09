@@ -4,6 +4,7 @@
 
 ## Repositorios
 
+- [Colección de proyectos para desarrolladores junior](junior-developer-projects/README.es.md) — 12 ejercicios didácticos en varias tecnologías; datos sintéticos, alcance y estado de verificación documentados.
 - [UncertaintyLab](../uncertaintylab/README.md).
 - [Python](https://github.com/vincimech010233/python) — automatización, tratamiento de datos y prototipos técnicos.
 - [JavaScript](https://github.com/vincimech010233/javascript) — ejercicios web y prototipo de chat local con pruebas de archivos estáticos y entrega de mensajes, ejecutadas también en CI. El ejercicio Marvel queda fuera de la selección por procedencia de imagen no verificada.

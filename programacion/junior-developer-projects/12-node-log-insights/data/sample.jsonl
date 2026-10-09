@@ -1,0 +1,5 @@
+{"level":"INFO","message":"service started"}
+{"level":"WARN","message":"retrying request"}
+{"level":"ERROR","message":"database timeout"}
+{"level":"ERROR","message":"database timeout"}
+{"level":"ERROR","message":"invalid input"}

@@ -4,6 +4,7 @@
 
 ## Repositories
 
+- [Junior Developer Project Collection](junior-developer-projects/README.md) — 12 learning exercises across several technologies, with synthetic data, scope and verification status documented.
 - [UncertaintyLab](../uncertaintylab/README.md).
 - [Python](https://github.com/vincimech010233/python) — automation, data processing and technical prototypes.
 - [JavaScript](https://github.com/vincimech010233/javascript) — web exercises and a local chat prototype with static-file and message-delivery tests, also run in CI. The Marvel exercise is excluded because its image provenance is unverified.

@@ -1,0 +1,8 @@
+{
+  "name": "log-insights",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": { "start": "node log-insights.js data/sample.jsonl", "test": "node --test" },
+  "engines": { "node": ">=18" }
+}

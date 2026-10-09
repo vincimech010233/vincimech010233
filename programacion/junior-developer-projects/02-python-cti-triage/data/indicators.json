@@ -1,0 +1,20 @@
+[
+  {
+    "type": "domain",
+    "value": "example.invalid",
+    "source": "training-sample",
+    "confidence": 0.65
+  },
+  {
+    "type": "ipv4",
+    "value": "192.0.2.10",
+    "source": "training-sample",
+    "confidence": 0.4
+  },
+  {
+    "type": "sha256",
+    "value": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "source": "training-sample",
+    "confidence": 0.9
+  }
+]

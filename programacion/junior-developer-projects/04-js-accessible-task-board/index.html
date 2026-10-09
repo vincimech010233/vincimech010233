@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="A small accessible task board"><title>Task Board</title><link rel="stylesheet" href="style.css"></head>
+<body><main class="app"><header><p class="eyebrow">LOCAL FIRST · PORTFOLIO DEMO</p><h1>Task Board</h1><p>Keep a short list. Your tasks stay in this browser.</p></header>
+<form id="task-form"><label for="task-input">New task</label><div class="entry"><input id="task-input" name="task" maxlength="120" required placeholder="e.g. Review a pull request"><button>Add task</button></div></form>
+<nav aria-label="Filter tasks" class="filters"><button type="button" data-filter="all" aria-pressed="true">All</button><button type="button" data-filter="active" aria-pressed="false">Active</button><button type="button" data-filter="done" aria-pressed="false">Completed</button></nav>
+<p id="status" class="status" role="status" aria-live="polite"></p><ul id="tasks" aria-label="Tasks"></ul><footer>Saved on this device · <button id="clear-done" type="button" class="link">Clear completed</button></footer></main><script src="app.js"></script></body></html>

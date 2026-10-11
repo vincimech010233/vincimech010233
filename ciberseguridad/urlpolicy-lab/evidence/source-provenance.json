@@ -1,0 +1,38 @@
+{
+  "classification": "VERIFIED",
+  "source_archive_name": "urlpolicy_lab_1.0.1_LOCAL_QA_20261011.zip",
+  "source_archive_sha256": "3ae0a12f6888798a6c91b3da00a3b3d924fbc1a2600658684352dc1159df5675",
+  "source_files_sha256": {
+    "urlpolicy_lab.py": "65acb035f9127e0df73aeb8eb0eb280dea71558b249bfc1bd475a6464da3e642",
+    "LICENSE": "7f7a41838076c2c6cc30dd00fa7305ddd24a59b429e2fb0cac77f9f312b3b283",
+    "tests/test_urlpolicy_lab.py": "95af71341a5512fec3d3d80afb479da276401cf162d157321f3624848ead6d4b",
+    "tests/test_independent_audit.py": "7c9eb79e7a1d93c40447c1abf1b32b264ab6783d97d423dc4feb7d0eae3824aa",
+    "tests/test_critic_regressions.py": "adf3ac56780e5f43cd8add6ae9e89e40e11b58685da87c2cffa1252170f71a1f",
+    "examples/cases.json": "9525ded0f2cb4fae20ac0ffa7f39720f7f81d21c09c20409df53df716d4f44ea",
+    "examples/observed_demo.json": "d66ff3759bb630da1aced18a9f0c85ac12e366e5935fb331c6d5497026846b75",
+    "examples/demo_report.json": "402666ed556081d1f90e2e3f396d12dfbff77983cfdf15afebdbff693813f938"
+  },
+  "copied_files_unchanged": true,
+  "historical_validation": "Prior Codex-assisted local technical audit, 2026-10-11. New portfolio validation is recorded separately.",
+  "author_identity": "OWNER_DECLARED",
+  "authority_to_publish": "OWNER_DECLARED",
+  "original_archive_sha256": "1d1862a9f19e8adb69c11478e1013d4f2a8f965985f49a6abb36ab5c7a171acc",
+  "owner_declaration": {
+    "classification": "VERIFIED",
+    "date": "2026-10-11",
+    "source": "First-party owner declaration in the current task",
+    "declared_authorship": true,
+    "declared_permission_to_publish_all_contributions_under_MIT": true,
+    "interpretation": "OWNER_DECLARED; independent legal/contributor provenance corroboration NOT_VERIFIED",
+    "external_publication_authorized": false
+  },
+  "independent_ownership_corroboration": "NOT_VERIFIED",
+  "portfolio_publication_authorization": {
+    "classification": "VERIFIED",
+    "date": "2026-10-11",
+    "source": "Later explicit owner instruction in this task",
+    "scope": "Reviewed project and four portfolio pages in existing vincimech010233/vincimech010233 repository only",
+    "outbound_messages_authorized": false,
+    "separate_repository_authorized": false
+  }
+}

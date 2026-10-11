@@ -1,0 +1,22 @@
+{
+  "classification": "VERIFIED",
+  "classify_calls": 20000,
+  "elapsed_seconds": 0.41021853600068425,
+  "generated_inputs": 10000,
+  "input_stream_sha256": "a23a5afcd9f3f2e2ba3764e9259a33f17109614f9260b9fd9d3d68eff7a541cf",
+  "invariants": [
+    "no uncaught exception",
+    "valid label",
+    "determinism",
+    "string reason"
+  ],
+  "labels": {
+    "ALLOW_LITERAL": 0,
+    "BLOCK": 9980,
+    "REVIEW_DNS": 20
+  },
+  "python": "3.12.3",
+  "seed": 20261011,
+  "semantic_security_oracle": false,
+  "tool_version": "1.0.1"
+}

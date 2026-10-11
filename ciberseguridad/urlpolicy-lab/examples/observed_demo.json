@@ -1,0 +1,21 @@
+{
+  "observed": [
+    {"id": "loopback_ipv4", "decision": "BLOCK"},
+    {"id": "rfc1918_ipv4", "decision": "BLOCK"},
+    {"id": "linklocal_ipv4", "decision": "BLOCK"},
+    {"id": "global_ipv4", "decision": "ALLOW"},
+    {"id": "global_ipv6", "decision": "ALLOW"},
+    {"id": "ipv6_loopback", "decision": "BLOCK"},
+    {"id": "ipv4_mapped_v6", "decision": "BLOCK"},
+    {"id": "six_to_four", "decision": "BLOCK"},
+    {"id": "teredo", "decision": "BLOCK"},
+    {"id": "localhost", "decision": "BLOCK"},
+    {"id": "private_dns", "decision": "BLOCK"},
+    {"id": "unknown_dns", "decision": "REVIEW"},
+    {"id": "userinfo", "decision": "BLOCK"},
+    {"id": "port_invalid", "decision": "BLOCK"},
+    {"id": "opaque_numeric", "decision": "BLOCK"},
+    {"id": "http_scheme", "decision": "BLOCK"},
+    {"id": "backslash", "decision": "BLOCK"}
+  ]
+}

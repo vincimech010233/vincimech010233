@@ -6,6 +6,10 @@
 
 Desarrollo herramientas prácticas y proyectos técnicos reproducibles en software, seguridad defensiva, física e ingeniería. Las páginas de cada área distinguen el trabajo realizado de las competencias que aún estoy desarrollando.
 
+## Proyecto destacado de seguridad defensiva
+
+[URLPolicy Lab 1.0.1](ciberseguridad/urlpolicy-lab/README.md) — QA offline en Python para políticas de URL de webhooks, con validación acotada de JSON, 38 métodos de test automatizados y fuzzing reproducible de 10.000 entradas. Preparación y revisión asistidas por Codex; no afirma protección SSRF durante la ejecución ni auditoría externa. Permiso de publicación MIT declarado por el titular; canal privado de reporte pendiente.
+
 ## Mapa del portfolio
 
 | Área | Proyectos representativos |
@@ -16,6 +20,7 @@ Desarrollo herramientas prácticas y proyectos técnicos reproducibles en softwa
 | **[Soporte de producto y aplicaciones](product-application-support/README.es.md)** | [Linux Application Incident Lab](https://github.com/vincimech010233/linux-application-incident-lab) — incidencia sintética con reproducción, logs, causa, recuperación y QA manual; no es un caso de cliente real. |
 | **[Linux / Sistemas y soporte IT](linux-systems/README.es.md)** | [Linux Resource Benchmark](https://github.com/vincimech010233/linux-resource-benchmark) (diagnóstico acotado del sistema) · [Linux Application Incident Lab](https://github.com/vincimech010233/linux-application-incident-lab) (diagnóstico y recuperación de servicio en laboratorio sintético). |
 | **[Ciberseguridad / SOC](ciberseguridad/README.md)** | [VEX Shadow Audit](https://github.com/vincimech010233/vex-shadow-audit) (análisis sin conexión de precedencia de repositorios OpenVEX y declaraciones contradictorias; candidatos para revisión manual, sin supresión automática) · [Defensive Security Lab](https://github.com/vincimech010233/cibersecurity) (informe de accesos fallidos de solo lectura, escáner acotado a localhost por defecto, lab en loopback, pruebas y CI) · [Independent Security Research](ciberseguridad/README.md#investigación-independiente) (auditoría de código fuente C++, análisis estático y pruebas locales con ASan) |
+| **Application Security / Automatización de seguridad Python** | [URLPolicy Lab 1.0.1](ciberseguridad/urlpolicy-lab/README.md) — datos sintéticos locales, modelo de amenazas, regresiones y fuzzing acotado. |
 | **[OSINT](osint/README.md)** | [OSINT Evidence Pipeline](https://github.com/vincimech010233/osint-evidence-pipeline) (metadatos públicos y procedencia de fuentes) |
 | **[Física / Computación científica](fisica/README.md)** | [High-Precision TIDL Simulator](https://github.com/vincimech010233/high-precision-tidl-simulator) (simulación de software sin validación con hardware) · [physic](https://github.com/vincimech010233/physic) · [UncertaintyLab](uncertaintylab/README.md) |
 | **[Ingeniería industrial](ingenieria-industrial/README.es.md)** | [OEE Downtime Analyzer](https://github.com/vincimech010233/oee-downtime-analyzer) (OEE, paradas y Pareto de turnos sintéticos) |

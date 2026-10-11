@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+build/
+dist/
+.coverage
+htmlcov/
+.pytest_cache/
+*.tmp
+*.swp
+*.trace
+.env
+.env.*
+!.env.example

@@ -1,0 +1,158 @@
+{
+  "tool": "URLPolicy Lab",
+  "version": "1.0.1",
+  "mode": "offline",
+  "policy": {
+    "allow_http": false,
+    "no_network_operations": true
+  },
+  "summary": {
+    "PASS": 16,
+    "FAIL": 0,
+    "WARN": 1,
+    "UNTESTED": 0
+  },
+  "cases": [
+    {
+      "id": "loopback_ipv4",
+      "url": "https://127.0.0.1/health",
+      "expected": "BLOCK",
+      "reason": "non_global_ip_literal",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "rfc1918_ipv4",
+      "url": "https://10.1.2.3/",
+      "expected": "BLOCK",
+      "reason": "non_global_ip_literal",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "linklocal_ipv4",
+      "url": "https://169.254.1.1/",
+      "expected": "BLOCK",
+      "reason": "non_global_ip_literal",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "global_ipv4",
+      "url": "https://8.8.8.8/",
+      "expected": "ALLOW_LITERAL",
+      "reason": "global_ip_literal_only_connection_not_tested",
+      "observed": "ALLOW",
+      "verdict": "PASS"
+    },
+    {
+      "id": "global_ipv6",
+      "url": "https://[2001:4860:4860::8888]/",
+      "expected": "ALLOW_LITERAL",
+      "reason": "global_ip_literal_only_connection_not_tested",
+      "observed": "ALLOW",
+      "verdict": "PASS"
+    },
+    {
+      "id": "ipv6_loopback",
+      "url": "https://[::1]/",
+      "expected": "BLOCK",
+      "reason": "non_global_ip_literal",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "ipv4_mapped_v6",
+      "url": "https://[::ffff:127.0.0.1]/",
+      "expected": "BLOCK",
+      "reason": "ipv4_mapped_ipv6_requires_explicit_policy",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "six_to_four",
+      "url": "https://[2002:7f00:0001::]/",
+      "expected": "BLOCK",
+      "reason": "ipv6_6to4_tunnel_requires_explicit_policy",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "teredo",
+      "url": "https://[2001:0:4136:e378:8000:63bf:7fff:fffe]/",
+      "expected": "BLOCK",
+      "reason": "ipv6_teredo_tunnel_requires_explicit_policy",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "localhost",
+      "url": "https://localhost/",
+      "expected": "BLOCK",
+      "reason": "local_hostname",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "private_dns",
+      "url": "https://service.internal/",
+      "expected": "BLOCK",
+      "reason": "local_hostname",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "unknown_dns",
+      "url": "https://webhook.example.test/",
+      "expected": "REVIEW_DNS",
+      "reason": "hostname_requires_verified_dns_and_pinned_dial",
+      "observed": "REVIEW",
+      "verdict": "WARN"
+    },
+    {
+      "id": "userinfo",
+      "url": "https://user@webhook.example.test/",
+      "expected": "BLOCK",
+      "reason": "userinfo_forbidden",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "port_invalid",
+      "url": "https://8.8.8.8:99999/",
+      "expected": "BLOCK",
+      "reason": "malformed_url",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "opaque_numeric",
+      "url": "https://2130706433/",
+      "expected": "BLOCK",
+      "reason": "ambiguous_numeric_hostname",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "http_scheme",
+      "url": "http://8.8.8.8/",
+      "expected": "BLOCK",
+      "reason": "disallowed_scheme",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    },
+    {
+      "id": "backslash",
+      "url": "https://example.test\\@127.0.0.1/",
+      "expected": "BLOCK",
+      "reason": "backslash_parser_ambiguity",
+      "observed": "BLOCK",
+      "verdict": "PASS"
+    }
+  ],
+  "limits": [
+    "No DNS resolution, redirects or connection-time pinning are tested.",
+    "ALLOW_LITERAL is not proof of a safe HTTP request.",
+    "A PASS does not establish absence of SSRF vulnerabilities."
+  ]
+}

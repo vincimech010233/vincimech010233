@@ -1,0 +1,147 @@
+{
+  "classification": "VERIFIED",
+  "date_utc": "2026-10-11T10:59:58.596196+00:00",
+  "origin": "Fresh Codex-assisted local portfolio rerun; not inherited historical result",
+  "environment": {
+    "system": "Linux",
+    "architecture": "x86_64",
+    "python": "3.12.3"
+  },
+  "tests": {
+    "classification": "VERIFIED",
+    "elapsed_seconds": 0.6466220229995088,
+    "errors": 0,
+    "failures": 0,
+    "maxrss_kib": 28476,
+    "platform": "linux",
+    "python": "3.12.3",
+    "readme_example_bytes_equal": true,
+    "readme_example_summary": {
+      "FAIL": 0,
+      "PASS": 16,
+      "UNTESTED": 0,
+      "WARN": 1
+    },
+    "scope": "38 unittest methods, including 10000-input seeded string fuzzing",
+    "skipped": 0,
+    "success": true,
+    "tests": 38
+  },
+  "fuzz": {
+    "classification": "VERIFIED",
+    "classify_calls": 20000,
+    "elapsed_seconds": 0.41021853600068425,
+    "generated_inputs": 10000,
+    "input_stream_sha256": "a23a5afcd9f3f2e2ba3764e9259a33f17109614f9260b9fd9d3d68eff7a541cf",
+    "invariants": [
+      "no uncaught exception",
+      "valid label",
+      "determinism",
+      "string reason"
+    ],
+    "labels": {
+      "ALLOW_LITERAL": 0,
+      "BLOCK": 9980,
+      "REVIEW_DNS": 20
+    },
+    "python": "3.12.3",
+    "seed": 20261011,
+    "semantic_security_oracle": false,
+    "tool_version": "1.0.1"
+  },
+  "isolation": {
+    "preflight": "PASS",
+    "checks": {
+      "socket": {
+        "denied": true,
+        "errno": 1
+      },
+      "fork": {
+        "denied": true,
+        "errno": 1
+      },
+      "exec": {
+        "denied": true,
+        "errno": 1
+      },
+      "change_limit": {
+        "denied": true,
+        "errno": 1
+      },
+      "outside_write": {
+        "denied": true,
+        "errno": 30
+      },
+      "outside_read": {
+        "denied": true,
+        "errno": 2
+      },
+      "single_file_limit": {
+        "denied": true,
+        "errno": 27
+      },
+      "total_storage_limit": {
+        "denied": true,
+        "errno": 28,
+        "successful_mib": 16
+      },
+      "memory_limit": {
+        "denied": true
+      }
+    },
+    "limits": {
+      "9": [
+        268435456,
+        268435456
+      ],
+      "0": [
+        10,
+        10
+      ],
+      "1": [
+        4194304,
+        4194304
+      ],
+      "7": [
+        64,
+        64
+      ]
+    },
+    "network_namespace_separate": true,
+    "network_interfaces": [
+      "lo"
+    ],
+    "ipv4_routes": [],
+    "effective_capabilities": "0",
+    "no_new_privileges": true,
+    "seccomp_filter_active": true,
+    "writable_mounts": [
+      "/work"
+    ],
+    "work_quota_bytes": 16777216,
+    "private_host_home_mounted": false,
+    "cpu_control": {
+      "mode": "cpu-probe",
+      "returncode": 137,
+      "failure": null,
+      "wall_seconds": 1.045762959000058
+    },
+    "network_trace_checks": {
+      "run_validation": {
+        "filter_load_observed": true,
+        "network_syscalls_after_filter": 0,
+        "raw_trace_sha256": "74bf4dd35d77a240f3c46e42bc457736328720339ee59153ec593975d6343ff9"
+      },
+      "fuzz": {
+        "filter_load_observed": true,
+        "network_syscalls_after_filter": 0,
+        "raw_trace_sha256": "fd811b8e8cb8a745889c54eb8fcbce427b3fab35f5b988590e546f83004716e5"
+      }
+    }
+  },
+  "provenance": "evidence/source-provenance.json",
+  "independent_external_audit": false,
+  "historical_failures_preserved_locally": true,
+  "rights_status_at_execution": "NOT_VERIFIED",
+  "current_rights_record": "evidence/source-provenance.json"
+}

@@ -1,0 +1,21 @@
+{
+  "cases": [
+    {"id": "loopback_ipv4", "url": "https://127.0.0.1/health"},
+    {"id": "rfc1918_ipv4", "url": "https://10.1.2.3/"},
+    {"id": "linklocal_ipv4", "url": "https://169.254.1.1/"},
+    {"id": "global_ipv4", "url": "https://8.8.8.8/"},
+    {"id": "global_ipv6", "url": "https://[2001:4860:4860::8888]/"},
+    {"id": "ipv6_loopback", "url": "https://[::1]/"},
+    {"id": "ipv4_mapped_v6", "url": "https://[::ffff:127.0.0.1]/"},
+    {"id": "six_to_four", "url": "https://[2002:7f00:0001::]/"},
+    {"id": "teredo", "url": "https://[2001:0:4136:e378:8000:63bf:7fff:fffe]/"},
+    {"id": "localhost", "url": "https://localhost/"},
+    {"id": "private_dns", "url": "https://service.internal/"},
+    {"id": "unknown_dns", "url": "https://webhook.example.test/"},
+    {"id": "userinfo", "url": "https://user@webhook.example.test/"},
+    {"id": "port_invalid", "url": "https://8.8.8.8:99999/"},
+    {"id": "opaque_numeric", "url": "https://2130706433/"},
+    {"id": "http_scheme", "url": "http://8.8.8.8/"},
+    {"id": "backslash", "url": "https://example.test\\@127.0.0.1/"}
+  ]
+}

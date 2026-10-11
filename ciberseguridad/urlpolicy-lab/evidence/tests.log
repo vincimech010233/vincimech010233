@@ -1,0 +1,50 @@
+test_additional_ipv6_fixed_oracle (test_critic_regressions.CriticTests.test_additional_ipv6_fixed_oracle) ... ok
+test_corrected_identity (test_critic_regressions.CriticTests.test_corrected_identity) ... ok
+test_encoded_fragment_is_not_fragment (test_critic_regressions.CriticTests.test_encoded_fragment_is_not_fragment) ... ok
+test_exact_byte_budget_and_utf8 (test_critic_regressions.CriticTests.test_exact_byte_budget_and_utf8) ... ok
+test_ids_and_url_lengths (test_critic_regressions.CriticTests.test_ids_and_url_lengths) ... ok
+test_metomorphic_dns_authority (test_critic_regressions.CriticTests.test_metomorphic_dns_authority) ... ok
+test_output_and_invalid_json_cli (test_critic_regressions.CriticTests.test_output_and_invalid_json_cli) ... ok
+test_permissive_exit_is_documented (test_critic_regressions.CriticTests.test_permissive_exit_is_documented) ... ok
+test_01_malformed_bracket_authority (test_independent_audit.IndependentTests.test_01_malformed_bracket_authority) ... ok
+test_02_empty_fragment (test_independent_audit.IndependentTests.test_02_empty_fragment) ... ok
+test_03_empty_port (test_independent_audit.IndependentTests.test_03_empty_port) ... ok
+test_04_multiple_terminal_dots (test_independent_audit.IndependentTests.test_04_multiple_terminal_dots) ... ok
+test_05_multicast_not_public_unicast (test_independent_audit.IndependentTests.test_05_multicast_not_public_unicast) ... ok
+test_06_invalid_observation_types_cli (test_independent_audit.IndependentTests.test_06_invalid_observation_types_cli) ... ok
+test_07_nested_json_cli (test_independent_audit.IndependentTests.test_07_nested_json_cli) ... ok
+test_08_byte_limit_despite_stale_stat (test_independent_audit.IndependentTests.test_08_byte_limit_despite_stale_stat) ... ok
+test_09_duplicate_json_keys (test_independent_audit.IndependentTests.test_09_duplicate_json_keys) ... ok
+test_10_manual_ipv4_range_oracle (test_independent_audit.IndependentTests.test_10_manual_ipv4_range_oracle) ... ok
+test_11_input_limits (test_independent_audit.IndependentTests.test_11_input_limits) ... ok
+test_12_full_verdict_matrix (test_independent_audit.IndependentTests.test_12_full_verdict_matrix) ... ok
+test_13_bundled_report_reproduction (test_independent_audit.IndependentTests.test_13_bundled_report_reproduction) ... ok
+test_14_atomic_failure_cleanup (test_independent_audit.IndependentTests.test_14_atomic_failure_cleanup) ... ok
+test_15_bounded_string_fuzz (test_independent_audit.IndependentTests.test_15_bounded_string_fuzz) ... ok
+test_allow_http_option (test_urlpolicy_lab.URLPolicyTests.test_allow_http_option) ... ok
+test_bad_urls_negative (test_urlpolicy_lab.URLPolicyTests.test_bad_urls_negative) ... ok
+test_catalog_blocked_inputs (test_urlpolicy_lab.URLPolicyTests.test_catalog_blocked_inputs) ... ok
+test_cli_end_to_end (test_urlpolicy_lab.URLPolicyTests.test_cli_end_to_end) ... Offline analysis complete: PASS=16, FAIL=0, WARN=1, UNTESTED=0
+Report: /work/tmpyg9wz9to/result.json
+ok
+test_cli_nonzero_for_failure (test_urlpolicy_lab.URLPolicyTests.test_cli_nonzero_for_failure) ... Offline analysis complete: PASS=0, FAIL=1, WARN=0, UNTESTED=0
+Report: /work/tmpzua1tgm3/audit.json
+ok
+test_comparison_accepts_block (test_urlpolicy_lab.URLPolicyTests.test_comparison_accepts_block) ... ok
+test_comparison_dns_is_review (test_urlpolicy_lab.URLPolicyTests.test_comparison_dns_is_review) ... ok
+test_comparison_flags_negative_observation (test_urlpolicy_lab.URLPolicyTests.test_comparison_flags_negative_observation) ... ok
+test_dns_never_marked_safe (test_urlpolicy_lab.URLPolicyTests.test_dns_never_marked_safe) ... ok
+test_duplicate_ids (test_urlpolicy_lab.URLPolicyTests.test_duplicate_ids) ... ok
+test_invalid_json (test_urlpolicy_lab.URLPolicyTests.test_invalid_json) ... ok
+test_no_network_dependency (test_urlpolicy_lab.URLPolicyTests.test_no_network_dependency) ... ok
+test_observed_unknown_ids (test_urlpolicy_lab.URLPolicyTests.test_observed_unknown_ids) ... ok
+test_public_literal_positive (test_urlpolicy_lab.URLPolicyTests.test_public_literal_positive) ... ok
+test_reject_symlink_output (test_urlpolicy_lab.URLPolicyTests.test_reject_symlink_output) ... ERROR: Output path is a symlink or its directory does not exist
+ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 0.643s
+
+OK
+Offline analysis complete: PASS=16, FAIL=0, WARN=1, UNTESTED=0
+Report: /work/tmpscf922_r/demo_report.json

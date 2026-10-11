@@ -1,0 +1,45 @@
+{
+  "classification": "OBSERVED",
+  "status": "PASS_WITH_REVIEWED_SYNTHETIC_MATCHES",
+  "checked_files_before_critical_review": 28,
+  "secret_patterns_detected": 0,
+  "private_home_paths_detected": 0,
+  "binary_files": 0,
+  "symlinks": 0,
+  "reviewed_matches": [
+    {
+      "file": "examples/demo_report.json",
+      "line": 114,
+      "pattern": "email_address",
+      "assessment": "Synthetic userinfo URL user@webhook.example.test, intended rejection fixture; no real email, credential or third-party personal data"
+    },
+    {
+      "file": "examples/cases.json",
+      "line": 15,
+      "pattern": "email_address",
+      "assessment": "Synthetic userinfo URL user@webhook.example.test, intended rejection fixture; no real email, credential or third-party personal data"
+    }
+  ],
+  "metadata": "No Git metadata, raw host traces, environment secrets or private user paths are shipped; example userinfo is fabricated",
+  "limits": "Pattern-based detection plus manual file inventory; not proof of absence of all secrets, personal data or hidden provenance",
+  "publication_rights": "OWNER_DECLARED",
+  "final_files_checked_excluding_manifest": 30,
+  "post_critic_scan": "PASS",
+  "unreviewed_sensitive_matches": [],
+  "missing_relative_markdown_links": [],
+  "original_and_approved_archives_unchanged": true,
+  "final_revision_scan": {
+    "classification": "OBSERVED",
+    "date": "2026-10-11",
+    "files_checked": 31,
+    "unreviewed_sensitive_matches": [],
+    "missing_relative_markdown_links": [],
+    "reviewed_synthetic_email_files": [
+      "evidence/privacy-review.json",
+      "examples/cases.json",
+      "examples/demo_report.json"
+    ],
+    "publication_authorized": "Existing portfolio only",
+    "product_code_changed": false
+  }
+}

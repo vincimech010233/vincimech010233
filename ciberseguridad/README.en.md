@@ -2,6 +2,10 @@
 
 [Español](README.md)
 
+## Application Security portfolio project
+
+- [URLPolicy Lab 1.0.1](urlpolicy-lab/README.md) — offline Python webhook URL-policy QA with strict local JSON loading, explicit uncertainty labels, atomic reports, 38 tests and seeded 10,000-input robustness fuzzing. Architecture, threat model, sanitized evidence and interview materials are included. Codex-assisted preparation and review; MIT publication permission declared by the owner and private reporting channel pending. No runtime protection or external certification claimed.
+
 ## Repository
 
 - [cibersecurity](https://github.com/vincimech010233/cibersecurity) — simulated log analyzer and read-only failed-login summary, TCP scanner with localhost and a small range by default, and an injection lab bound to loopback. [Merged PR #2](https://github.com/vincimech010233/cibersecurity/pull/2) added tests for those paths and expanded CI. Other utilities and educational labs require independent review before use.

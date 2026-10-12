@@ -2,7 +2,11 @@
 
 [Español](README.md) · [English](README.en.md)
 
-Consulta una página y guarda un informe. **Tails** descarga su respuesta por el proxy Tor, sin ejecutar JavaScript. **Linux con Playwright** permite observar JavaScript y obtener una captura.
+Revisa una URL dentro de una VM dedicada para reducir la exposición de tus archivos y cuentas personales. Guarda evidencias para entender qué devuelve la página y, en modo dinámico, qué solicitudes genera. **No certifica que una URL sea segura.**
+
+**¿A quién le sirve?** A estudiantes de ciberseguridad, analistas SOC y desarrolladores que revisan páginas propias o autorizadas y necesitan conservar un informe.
+
+**Tails:** consulta HTTP por el proxy Tor, sin JavaScript en estos pasos. **Linux con Playwright:** ejecuta JavaScript y permite capturar la página.
 
 **Descargas:** [ZIP Tails](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_tails_vm.zip) · [ZIP Linux](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_linux_vm.zip)
 
@@ -19,12 +23,14 @@ Arranca Tails en VMware y espera a que **Tor Connection** indique que está cone
 ### 2. Extrae el ZIP
 
 ```bash
-mkdir analizador-tails
-python3 -m zipfile -e analizador_tails_vm.zip analizador-tails
-cd analizador-tails
+python3 -m zipfile -e ./analizador_tails_vm.zip "$HOME/analizador-tails-01"
+cd "$HOME/analizador-tails-01"
+ls analizar.py
 ```
 
-Si la carpeta ya existe, utiliza otro nombre en las tres líneas.
+El primer comando lee el ZIP de la carpeta actual y crea automáticamente `analizador-tails-01` en tu carpeta personal. El segundo entra en ella; el tercero confirma que está `analizar.py`. No hace falta `mkdir`.
+
+Si esa carpeta ya existe, cambia `01` por `02` en las dos primeras líneas para evitar mezclar archivos.
 
 ### 3. Ejecuta
 
@@ -42,7 +48,13 @@ Necesitas Python 3, curl y el proxy Tor accesible en el puerto indicado. `--sin-
 
 En **Archivos**, entra en `resultado-tails-01` y abre `informe.html` con Tor Browser. Revisa las advertencias y errores; el JSON está en `informe.json`.
 
-En este modo no hay captura ni texto renderizado. Si aparece **«no se detecta SOCKS»**, comprueba la conexión de Tor y su puerto: el programa aborta sin generar informe.
+**Qué obtendrás:**
+
+- `informe.html` e `informe.json`: resumen de la consulta, códigos HTTP, advertencias y errores.
+- `cabeceras.txt` y `respuesta.bin`: cabeceras y respuesta descargadas; pueden ser parciales si falla la transferencia.
+- Con la fase dinámica de Linux: solicitudes del navegador en el JSON y, si se completan los pasos correspondientes, `captura.png` y `contenido_visible.txt`.
+
+Tails en este modo no genera captura. Si aparece **«no se detecta SOCKS»**, comprueba Tor y su puerto: el programa aborta sin generar informe. Una petición registrada no demuestra por sí sola exfiltración.
 
 <details>
 <summary><strong>Linux: observar JavaScript y obtener una captura</strong></summary>

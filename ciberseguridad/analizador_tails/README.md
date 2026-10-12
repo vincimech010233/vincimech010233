@@ -1,16 +1,20 @@
 # Analizador web desde terminal: Tails y Linux en VMware
 
+[Español](README.md) · [English](README.en.md)
+
 Esta herramienta descarga la respuesta de una URL y prepara un informe HTML para leer y un JSON con los resultados. Opcionalmente abre la página con Chromium para observar JavaScript, texto renderizado y solicitudes del navegador.
 
 **Para empezar en Tails, usa el ZIP Tails y `--sin-dinamico`.** Así solo necesitas Python 3, curl y el proxy Tor accesible. Para observar JavaScript, usa una VM Linux desechable con Playwright instalado.
 
 Los paquetes contienen el mismo `analizar.py`. Cambian las instrucciones y el modo que eliges al ejecutarlo. No incluyen Tails, VMware, Playwright ni Chromium.
 
+Ambos ZIP incluyen la guía, los inicios rápidos y la verificación en español e inglés. Los nombres de los comandos, la ayuda del programa y los textos de los informes permanecen en español.
+
 ## 1. Descargas
 
 - [Descargar ZIP Tails](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_tails_vm.zip)
 - [Descargar ZIP Linux](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_linux_vm.zip)
-- [Sumas SHA-256](SHA256SUMS.txt)
+- [Sumas SHA-256](https://github.com/vincimech010233/vincimech010233/blob/main/ciberseguridad/analizador_tails/SHA256SUMS.txt)
 - [Código para revisar antes de ejecutarlo](analizar.py)
 - [Comprobaciones y limitaciones](VERIFICACION.md)
 

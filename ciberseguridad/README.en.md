@@ -8,7 +8,7 @@
 
 ## Web analyzer for Tails and Linux in VMware
 
-- [Spanish guide and ZIP downloads](analizador_tails/README.md) — download from GitHub inside Tails, run static HTTP through the Tor proxy, or prepare Playwright in a disposable Linux VM. HTML/JSON reports, SHA-256 checksums and seven offline tests included. **NOT_VERIFIED:** actual VMware execution and absence of network leaks. The script does not block all outgoing data or provide a complete malware sandbox.
+- [English guide](analizador_tails/README.en.md) · [Guía en español](analizador_tails/README.md) — both ZIPs include bilingual documentation. Download from GitHub inside Tails, run static HTTP through the Tor proxy, or prepare Playwright in a disposable Linux VM. HTML/JSON reports, SHA-256 checksums and seven offline tests included. Program help and reports remain in Spanish. **NOT_VERIFIED:** actual VMware execution and absence of network leaks. The script does not block all outgoing data or provide a complete malware sandbox.
 
 ## Repository
 

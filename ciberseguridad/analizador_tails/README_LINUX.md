@@ -1,5 +1,7 @@
 # Inicio rápido en Linux desechable
 
+[Español](README_LINUX.md) · [English](README_LINUX.en.md)
+
 Lee primero `README.md` para preparar la VM, instalar dependencias y leer resultados. Dentro de la VM Debian/Ubuntu, desde la carpeta extraída:
 
 ```bash

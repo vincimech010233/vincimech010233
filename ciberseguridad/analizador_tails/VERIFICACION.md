@@ -1,5 +1,7 @@
 # Verificación y procedencia
 
+[Español](VERIFICACION.md) · [English](VERIFICATION.en.md)
+
 Fecha: 12 de octubre de 2026. Revisión documental y empaquetado asistidos por Codex.
 
 ## VERIFIED: comprobaciones locales
@@ -35,5 +37,7 @@ El comentario que menciona evitar fugas WebRTC no acredita una desactivación ex
 ## Alcance de esta publicación
 
 Se mejora la documentación, se incluyen pruebas offline y se reempaquetan los ZIP. No se añaden funciones de análisis al script original. Cada ZIP incluye guía, inicio rápido, verificación, pruebas y el README original para conservar la procedencia. Los archivos originales del usuario permanecen intactos.
+
+Ambos ZIP incluyen ahora documentación en español e inglés. La ayuda del programa, los nombres de opciones y los informes permanecen en español. Se conserva el README original histórico, con una traducción inglesa separada e identificada como tal.
 
 La validación general del espacio de preparación falló por un problema previo de `event_id` ausente o no único en su registro histórico; se conserva el diagnóstico local. Ese resultado no se presenta como prueba satisfactoria del espacio ni de las VM.

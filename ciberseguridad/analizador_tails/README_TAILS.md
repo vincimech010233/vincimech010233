@@ -1,5 +1,7 @@
 # Inicio rápido en Tails
 
+[Español](README_TAILS.md) · [English](README_TAILS.en.md)
+
 Lee primero `README.md` para descargar desde GitHub, preparar VMware, comprobar el paquete y leer el informe. Dentro de Tails, desde la carpeta extraída:
 
 ```bash

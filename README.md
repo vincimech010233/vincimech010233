@@ -6,6 +6,14 @@
 
 I build practical tools and reproducible technical projects across software, defensive cybersecurity, physics, and engineering. The area pages distinguish implemented work from skills I am still developing.
 
+## URL analyzer: Tails and Linux
+
+Review your own or authorized URLs in a dedicated VM to reduce exposure of personal files and accounts. Tails supports static HTTP through the Tor proxy; Linux with Playwright observes JavaScript and browser requests, with screenshots when the dynamic phase succeeds.
+
+Useful for cybersecurity students, SOC analysts, and developers. Produces HTML/JSON reports with responses, warnings, and errors. A report does not certify that a URL is safe. **NOT_VERIFIED:** actual VMware execution.
+
+[Usage guide](ciberseguridad/analizador_tails/README.en.md) · [Tails ZIP](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_tails_vm.zip) · [Linux ZIP](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_linux_vm.zip)
+
 ## Portfolio map
 
 | Area | Selected evidence |

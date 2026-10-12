@@ -6,6 +6,14 @@
 
 Desarrollo herramientas prácticas y proyectos técnicos reproducibles en software, seguridad defensiva, física e ingeniería. Las páginas de cada área distinguen el trabajo realizado de las competencias que aún estoy desarrollando.
 
+## Analizador de URL: Tails y Linux
+
+Revisa URL propias o autorizadas en una VM dedicada para reducir la exposición de tus archivos y cuentas personales. Tails permite consultar HTTP por el proxy Tor; Linux con Playwright observa JavaScript y solicitudes del navegador, con capturas cuando la fase dinámica tiene éxito.
+
+Útil para estudiantes de ciberseguridad, analistas SOC y desarrolladores. Genera informes HTML/JSON con respuestas, advertencias y errores. El informe no certifica que una URL sea segura. **NOT_VERIFIED:** ejecución real en VMware.
+
+[Guía de uso](ciberseguridad/analizador_tails/README.md) · [ZIP Tails](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_tails_vm.zip) · [ZIP Linux](https://github.com/vincimech010233/vincimech010233/raw/refs/heads/main/ciberseguridad/analizador_tails/analizador_linux_vm.zip)
+
 ## Mapa del portfolio
 
 | Área | Proyectos representativos |

@@ -6,6 +6,10 @@
 
 - [URLPolicy Lab 1.0.1](urlpolicy-lab/README.md) — offline Python webhook URL-policy QA with strict local JSON loading, explicit uncertainty labels, atomic reports, 38 tests and seeded 10,000-input robustness fuzzing. Architecture, threat model, sanitized evidence and interview materials are included. Codex-assisted preparation and review; MIT publication permission declared by the owner and private reporting channel pending. No runtime protection or external certification claimed.
 
+## Web analyzer for Tails and Linux in VMware
+
+- [Spanish guide and ZIP downloads](analizador_tails/README.md) — download from GitHub inside Tails, run static HTTP through the Tor proxy, or prepare Playwright in a disposable Linux VM. HTML/JSON reports, SHA-256 checksums and seven offline tests included. **NOT_VERIFIED:** actual VMware execution and absence of network leaks. The script does not block all outgoing data or provide a complete malware sandbox.
+
 ## Repository
 
 - [cibersecurity](https://github.com/vincimech010233/cibersecurity) — simulated log analyzer and read-only failed-login summary, TCP scanner with localhost and a small range by default, and an injection lab bound to loopback. [Merged PR #2](https://github.com/vincimech010233/cibersecurity/pull/2) added tests for those paths and expanded CI. Other utilities and educational labs require independent review before use.

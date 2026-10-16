@@ -95,6 +95,26 @@ describe('own additional tests', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('Identificadores duplicados');
     expect(cards()).toBe(0);
   });
+  it('shows a character initial when its portrait image fails', async () => {
+    const f: Fetcher = async () => ({ info: { next: null }, results: [
+      { id: 7, name: 'Ziggy', status: 'Alive', species: 'Human', image: 'https://images.test/7.jpeg' },
+    ] });
+    const { container } = render(<App fetcher={f} firstUrl="mock://page/1" />);
+    await hit();
+    await waitFor(() => expect(container.querySelector('.avatar img')).not.toBeNull());
+    const image = container.querySelector('.avatar img');
+    fireEvent.error(image!);
+    expect(container.querySelector('.avatar')).toHaveTextContent('Z');
+    expect(container.querySelector('.avatar img')).toBeNull();
+  });
+  it('keeps the avatar visible when a character name is empty', async () => {
+    const f: Fetcher = async () => ({ info: { next: null }, results: [
+      { id: 8, name: ' ', status: 'unknown', species: 'unknown' },
+    ] });
+    const { container } = render(<App fetcher={f} firstUrl="mock://page/1" />);
+    await hit();
+    await waitFor(() => expect(container.querySelector('.avatar')).toHaveTextContent('?'));
+  });
   it('provides a keyboard-accessible manual loader without IntersectionObserver', async () => {
     delete (globalThis as any).IntersectionObserver;
     const f = spy(createMockFetcher(0));

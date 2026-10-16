@@ -1,9 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import type { Fetcher } from './api/types';
 import { useInfiniteCharacters } from './hooks/useInfiniteCharacters';
 import { useIntersectionSentinel } from './hooks/useIntersectionSentinel';
 
 const LABEL: Record<string, string> = { IDLE: 'En reposo', OBSERVING: 'Observando', INTERSECTING: 'Intersección detectada', FETCHING: 'Cargando', SUCCESS: 'Página incorporada', ERROR: 'Error recuperable', COMPLETE: 'Completado' };
+
+function CharacterAvatar({ name, image }: { name: string; image?: string }) {
+  const [failed, setFailed] = useState(false);
+  return <div className="avatar" aria-hidden="true">
+    {image && !failed ? <img src={image} alt="" loading="lazy" onError={() => setFailed(true)} /> : (name.trim()[0] || '?')}
+  </div>;
+}
 
 export function App({ fetcher, firstUrl }: { fetcher: Fetcher; firstUrl: string }) {
   const h = useInfiniteCharacters(fetcher, firstUrl);
@@ -19,7 +26,7 @@ export function App({ fetcher, firstUrl }: { fetcher: Fetcher; firstUrl: string 
         {h.pages === 0 && h.phase !== 'ERROR' && <div className="skeleton" data-testid="skeleton">Abriendo portal…</div>}
         <ul className="grid" aria-label="Personajes">
           {h.characters.map((c) => (
-            <li key={c.id} className="card"><div className="avatar" aria-hidden="true">{c.image ? <img src={c.image} alt="" loading="lazy" /> : c.name[0]}</div>
+            <li key={c.id} className="card"><CharacterAvatar name={c.name} image={c.image} />
               <h2>{c.name}</h2><p>{c.species} · {c.status}</p></li>))}
         </ul>
         {h.next !== null && <div ref={sentinel} data-testid="sentinel" aria-hidden="true" className={`portal portal-${h.phase.toLowerCase()}`} />}

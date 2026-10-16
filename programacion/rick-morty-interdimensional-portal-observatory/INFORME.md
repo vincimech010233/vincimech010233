@@ -5,9 +5,9 @@
 - **VERIFIED:** The supplied ZIP passed CRC integrity checking. Its archive paths were relative, contained no `..` escape components, and contained no symbolic links. It was extracted to a new isolated directory. The original ZIP was preserved.
 - **VERIFIED:** The official challenge page lists the first-page `use()` + Suspense starter, `info.next` pagination, automatic sentinel loading, exact test IDs and loading/end strings, append behavior, stop-at-null behavior, and observer cleanup as requirements. Source: [ReactChallenges Infinite Scroll](https://www.reactchallenges.com/challenges/infinite-scroll).
 - **VERIFIED:** The challenge starter and official test runner were not present in the archive. `challenge/Characters.jsx` is explicitly a fragment intended to be adapted to that starter.
-- **VERIFIED:** Project tests (17/17), TypeScript check, Vite production build, challenge-fragment JSX parsing, and `npm audit` (0 vulnerabilities) passed after the fixes described below.
+- **VERIFIED:** Project tests (19/19), TypeScript check, Vite production build, challenge-fragment JSX parsing, and `npm audit` (0 vulnerabilities) passed after the fixes described below.
 - **VERIFIED:** The final checks used the bundled Node.js 24 runtime; Vitest 4.1.11 requires Node.js 20 or newer.
-- **OBSERVED:** The local browser rendered the demo at 390×844 and 1280×900 viewport settings. The mock source loaded pages automatically. This was a visual smoke check, not a cross-browser or accessibility certification.
+- **OBSERVED:** The local app was inspected at 390×844 and 1280×900. A user-provided API-mode screenshot showed several real pages loaded before a page-five network failure; loaded characters remained visible. It also showed failed portrait images and horizontal clipping near a 955 px viewport. This is a smoke check, not cross-browser or accessibility certification.
 
 ## Challenge contract
 
@@ -24,19 +24,19 @@ The fragment validates response shape, aborts on cleanup, detects cursor cycles,
 - **MEDIUM, fixed:** npm audit initially reported two critical and one moderate finding in Vitest's development dependency tree. Vitest was updated to 4.1.11, which supports the available Node 24 and Vite 6. The resulting audit reported zero vulnerabilities.
 - **OBSERVED:** The app guards concurrent requests, cancels stale work with AbortController, validates API pages, detects cursor cycles, preserves existing characters on errors, and keeps a bounded telemetry timeline.
 - **VERIFIED:** A new Strict Mode test confirms that an active request is aborted when the component unmounts.
-- **NOT_VERIFIED:** Formal WCAG 2.2 AA, automated axe checks, cross-browser compatibility, load/performance measurements, and live API browser behavior.
+- **NOT_VERIFIED:** Formal WCAG 2.2 AA, automated axe checks, cross-browser compatibility, load/performance measurements, visual rendering after the latest responsive CSS change, and reliable live API behavior. The user screenshot showed a recoverable network error on page five.
 
 ## Results
 
 | Check | Result |
 | --- | --- |
-| Project tests | **VERIFIED:** 17 passed |
+| Project tests | **VERIFIED:** 19 passed |
 | TypeScript and production build | **VERIFIED:** passed |
 | npm dependency audit | **VERIFIED:** 0 vulnerabilities after update |
 | Official challenge tests | **NOT_VERIFIED:** starter and runner absent |
-| Browser smoke check | **OBSERVED:** mock app rendered at mobile and desktop viewport settings |
+| Browser smoke check | **OBSERVED:** mock app rendered at mobile and desktop viewport settings; API mode loaded pages then hit a network error |
 | Accessibility certification / performance measurements | **NOT_VERIFIED** |
 
 ## Limitations
 
-The demo defaults to local mock data; the public API requires `VITE_SOURCE=api`. No demo deployment or performance claim is included. The portfolio repository is a GitHub profile README repository, not a deployed app site, so the project page links to source; there is no functional demo URL.
+The demo defaults to local mock data; the public API requires `VITE_SOURCE=api`. Remote API requests can fail and portraits can be unavailable; failures preserve loaded characters, show a retry action, and now fall back to initials for missing images. No demo deployment or performance claim is included. The portfolio repository is a GitHub profile README repository, not a deployed app site, so the project page links to source; there is no functional demo URL.

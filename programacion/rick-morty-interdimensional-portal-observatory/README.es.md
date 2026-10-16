@@ -26,7 +26,7 @@ Usa Node.js 20 o posterior (la auditoría se ejecutó con Node 24).
 
 La app usa datos simulados locales por defecto. Define `VITE_SOURCE=api` para usar la API pública de Rick and Morty.
 
-Pasaron 17 pruebas locales; también pasaron la comprobación de TypeScript/build y `npm audit` informó 0 vulnerabilidades tras actualizar Vitest. El starter y el ejecutor oficiales no estaban en el archivo recibido, así que la compatibilidad con el starter y el resultado de las 12 pruebas oficiales siguen **NOT_VERIFIED**. Se revisó la app en navegador con tamaños de vista móvil y escritorio; no se hizo certificación automática de accesibilidad ni medición de rendimiento.
+Pasaron 19 pruebas locales; también pasaron la comprobación de TypeScript/build y `npm audit` informó 0 vulnerabilidades tras actualizar Vitest. El starter y el ejecutor oficiales no estaban en el archivo recibido, así que la compatibilidad con el starter y el resultado de las 12 pruebas oficiales siguen **NOT_VERIFIED**. Se revisó la app en navegador con tamaños de vista móvil y escritorio; no se hizo certificación automática de accesibilidad ni medición de rendimiento.
 
 ## Código y evidencias
 

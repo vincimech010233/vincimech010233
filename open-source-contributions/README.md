@@ -6,6 +6,18 @@ This area records contributions reviewed and accepted in projects maintained by 
 
 ## Merged contributions
 
+### Microsoft OpenTelemetry Python — default logging collection fix
+
+[Pull request #288](https://github.com/microsoft/opentelemetry-distro-python/pull/288) · [Upstream repository](https://github.com/microsoft/opentelemetry-distro-python)
+
+- Fixed default Python log collection in the plain OpenTelemetry setup by attaching the logging handler to the root logger when the logger name is omitted, empty, or `None`, while retaining duplicate-handler protection and named-logger behavior.
+- Added and reorganized 23 regression cases into existing test suites, covering default and named loggers, levels, propagation, repeat setup, and disabled logging.
+- Added integration coverage for concurrent Azure Monitor and OTLP logging: a single `LoggingHandler` and `LoggerProvider` with both exporters/processors.
+- Incorporated maintainer feedback on test placement and concise documentation. The PR received maintainer approval and was merged into upstream `main` on 2026-10-16.
+- The maintainer expects a package release in the first week of November 2026; this is a forecast, not a confirmed published version.
+
+**Evidence:** [merged PR, changes and reviews](https://github.com/microsoft/opentelemetry-distro-python/pull/288) · [release timing comment](https://github.com/microsoft/opentelemetry-distro-python/pull/288#issuecomment-6218513273)
+
 ### PlasmaPy — units and particle guidance in `AGENTS.md`
 
 [Pull request #3388](https://github.com/PlasmaPy/PlasmaPy/pull/3388) · [Upstream repository](https://github.com/PlasmaPy/PlasmaPy)

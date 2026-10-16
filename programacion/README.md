@@ -5,6 +5,7 @@
 ## Repositories
 
 - [TrustProbe](https://github.com/vincimech010233/trustprobe) — local Python prototype with scripted AI feedback, synthetic checks, and explicit limits; not validated as an educational measurement tool.
+- [Rick & Morty — Interdimensional Portal Observatory](rick-morty-interdimensional-portal-observatory/README.md) — React/TypeScript infinite-scroll fragment and observability demo; 17 local tests pass, official challenge runner not verified.
 
 - [Junior Developer Project Collection](junior-developer-projects/README.md) — 12 learning exercises across several technologies, with synthetic data, scope and verification status documented.
 - [UncertaintyLab](../uncertaintylab/README.md).

@@ -22,5 +22,5 @@ button{background:var(--g);color:var(--bg);border:0;border-radius:6px;padding:.5
 :focus-visible{outline:3px solid var(--c);outline-offset:2px}
 .skeleton{background:var(--sur);padding:2rem;text-align:center;border-radius:8px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-@media(max-width:960px){.layout{grid-template-columns:minmax(0,1fr)}aside{position:static;order:2}}
+@media(max-width:700px){.layout{grid-template-columns:minmax(0,1fr)}aside{position:static;order:2}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

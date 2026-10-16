@@ -1,5 +1,5 @@
 // Fuente configurable (VITE_SOURCE=mock|api). Aísla la API de la lógica visual.
-import type { Fetcher, Page } from './types';
+import { ApiResponseError, type Fetcher, type Page } from './types';
 const STATUS = ['Alive', 'Dead', 'unknown'];
 export function createMockFetcher(delay = 400, pages = 4, size = 6): Fetcher {
   return (url, signal) => new Promise<Page>((resolve, reject) => {
@@ -16,7 +16,13 @@ export function createMockFetcher(delay = 400, pages = 4, size = 6): Fetcher {
 }
 const apiFetcher: Fetcher = async (url, signal) => {
   const r = await fetch(url, { signal });
-  if (!r.ok) throw new Error(`Error HTTP ${r.status}`);
+  if (!r.ok) {
+    const header = r.headers.get('Retry-After');
+    const retryAfterMs = header === null ? null : Number.isFinite(Number(header))
+      ? Math.max(0, Number(header) * 1000)
+      : Math.max(0, Date.parse(header) - Date.now());
+    throw new ApiResponseError(r.status, Number.isFinite(retryAfterMs) ? retryAfterMs : null);
+  }
   return r.json();
 };
 const useApi = import.meta.env?.VITE_SOURCE === 'api';

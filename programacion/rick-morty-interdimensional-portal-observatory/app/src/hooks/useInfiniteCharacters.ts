@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
-import type { Character, Fetcher, Page } from '../api/types';
+import { ApiResponseError, type Character, type Fetcher, type Page } from '../api/types';
 
 export type Phase = 'IDLE' | 'OBSERVING' | 'INTERSECTING' | 'FETCHING' | 'SUCCESS' | 'ERROR' | 'COMPLETE';
 export interface Ev { id: number; t: number; type: string; detail?: string; ms?: number }
@@ -7,6 +7,25 @@ type EvIn = [string, string?, number?];
 export interface State { characters: Character[]; next: string | null; phase: Phase; error: string | null; observer: 'connected' | 'disconnected';
   pages: number; started: number; completed: number; failed: number; active: number; lastMs: number | null; lastIntersection: number | null; events: Ev[] }
 export const MAX_EVENTS = 50;
+
+function retryDelay(error: unknown): number | null {
+  if (error instanceof TypeError) return 800;
+  if (!(error instanceof ApiResponseError)) return null;
+  if (error.status === 429) {
+    const delay = error.retryAfterMs ?? 2000;
+    return delay <= 10_000 ? delay : null;
+  }
+  return [502, 503, 504].includes(error.status) ? 800 : null;
+}
+
+function waitForRetry(ms: number, signal: AbortSignal): Promise<void> {
+  return new Promise((resolve, reject) => {
+    if (signal.aborted) { reject(new DOMException('Aborted', 'AbortError')); return; }
+    const timer = setTimeout(() => { signal.removeEventListener('abort', abort); resolve(); }, ms);
+    const abort = () => { clearTimeout(timer); reject(new DOMException('Aborted', 'AbortError')); };
+    signal.addEventListener('abort', abort, { once: true });
+  });
+}
 
 function validate(p: unknown): Page {
   if (!p || typeof p !== 'object') throw new Error('Respuesta con estructura inesperada');
@@ -43,7 +62,18 @@ export function useInfiniteCharacters(fetcher: Fetcher, firstUrl: string) {
     const t0 = performance.now();
     upd((p) => ({ phase: 'FETCHING', active: 1, started: p.started + 1 }), [['FETCH_STARTED', pageLabel]]);
     try {
-      const page = validate(await fetcher(url, c.signal));
+      let response: Page;
+      try {
+        response = await fetcher(url, c.signal);
+      } catch (error) {
+        const delay = retryDelay(error);
+        if (delay === null) throw error;
+        upd((p) => ({ failed: p.failed + 1, active: 0 }), [['FETCH_RETRY_WAIT', `${pageLabel} tras ${Math.ceil(delay / 1000)} s`]]);
+        await waitForRetry(delay, c.signal);
+        upd((p) => ({ started: p.started + 1, active: 1 }), [['FETCH_RETRY_STARTED', pageLabel]]);
+        response = await fetcher(url, c.signal);
+      }
+      const page = validate(response);
       if (c.signal.aborted || id !== req.current) return;
       const ms = Math.round(performance.now() - t0);
       if (visited.current.has(url) || (page.info.next !== null && (page.info.next === url || visited.current.has(page.info.next)))) throw new Error('Ciclo o página repetida en info.next');
@@ -65,7 +95,7 @@ export function useInfiniteCharacters(fetcher: Fetcher, firstUrl: string) {
     } catch (e) {
       if (c.signal.aborted || id !== req.current) return;
       inflight.current = false;
-      const msg = e instanceof SyntaxError ? 'Respuesta JSON inválida' : e instanceof TypeError ? 'Fallo de red' : (e as Error).message;
+      const msg = e instanceof SyntaxError ? 'Respuesta JSON inválida' : e instanceof TypeError ? 'Fallo de red' : e instanceof Error ? e.message : 'Error de carga';
       upd((p) => ({ failed: p.failed + 1, active: 0, phase: 'ERROR', error: msg }), [['FETCH_FAILED', `${pageLabel}: ${msg}`, Math.round(performance.now() - t0)]]);
     }
   }, [fetcher, upd]);

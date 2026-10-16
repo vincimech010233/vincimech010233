@@ -3,7 +3,7 @@ import { render, screen, act, waitFor, fireEvent } from '@testing-library/react'
 import { vi, beforeEach, describe, it, expect } from 'vitest';
 import { App } from '../App';
 import { createMockFetcher } from '../api/source';
-import type { Fetcher } from '../api/types';
+import { ApiResponseError, type Fetcher } from '../api/types';
 import { MAX_EVENTS } from '../hooks/useInfiniteCharacters';
 import { Suspense } from 'react';
 // @ts-expect-error The challenge delivery is a standalone JSX fragment without a TypeScript declaration.
@@ -77,6 +77,46 @@ describe('own additional tests', () => {
     expect(cards()).toBe(6);
     fail = false; await act(async () => { screen.getByRole('button', { name: 'Reintentar' }).click(); await new Promise((r) => setTimeout(r, 5)); });
     await waitFor(() => expect(cards()).toBe(12));
+  });
+  it('retries a transient network failure once and records the extra request', async () => {
+    const page = { info: { next: null }, results: [{ id: 21, name: 'Rick', status: 'Alive', species: 'Human' }] };
+    const f = vi.fn<Fetcher>()
+      .mockRejectedValueOnce(new TypeError('temporary network error'))
+      .mockResolvedValueOnce(page);
+    const { container } = render(<App fetcher={f} firstUrl="mock://page/1" />);
+    await hit();
+    const active = [...container.querySelectorAll('.metric')].find((m) => m.querySelector('dt')?.textContent === 'Activas');
+    expect(active?.querySelector('dd')).toHaveTextContent('0');
+    expect(await screen.findByTestId('end-of-list', {}, { timeout: 4000 })).toHaveTextContent('End of list');
+    expect(f).toHaveBeenCalledTimes(2);
+    expect(screen.getByRole('log')).toHaveTextContent('FETCH_RETRY');
+    const requests = [...container.querySelectorAll('.metric')].find((m) => m.querySelector('dt')?.textContent === 'Solicitudes iniciadas');
+    expect(requests?.querySelector('dd')).toHaveTextContent('2');
+    const failed = [...container.querySelectorAll('.metric')].find((m) => m.querySelector('dt')?.textContent === 'Fallidas');
+    expect(failed?.querySelector('dd')).toHaveTextContent('1');
+    const completed = [...container.querySelectorAll('.metric')].find((m) => m.querySelector('dt')?.textContent === 'Completadas');
+    expect(completed?.querySelector('dd')).toHaveTextContent('1');
+  });
+  it('aborts the retry wait on unmount without sending another request', async () => {
+    const f = vi.fn<Fetcher>()
+      .mockRejectedValueOnce(new TypeError('temporary network error'))
+      .mockResolvedValueOnce({ info: { next: null }, results: [] });
+    const { unmount } = render(<App fetcher={f} firstUrl="mock://page/1" />);
+    await hit();
+    expect(screen.getByRole('log')).toHaveTextContent('FETCH_RETRY_WAIT');
+    unmount();
+    await new Promise((resolve) => setTimeout(resolve, 5));
+    expect(f).toHaveBeenCalledTimes(1);
+  });
+  it('reports a long API rate limit wait instead of retrying early', async () => {
+    const f = vi.fn<Fetcher>().mockRejectedValue(new ApiResponseError(429, 60_000));
+    render(<App fetcher={f} firstUrl="mock://page/1" />);
+    await hit();
+    expect(await screen.findByRole('alert')).toHaveTextContent('HTTP 429');
+    expect(screen.getByRole('alert')).toHaveTextContent('espera 60 s');
+    expect(f).toHaveBeenCalledTimes(1);
+    const failed = screen.getByText('Fallidas').parentElement;
+    expect(failed).toHaveTextContent('1');
   });
   it('rejects duplicate pages and malformed responses', async () => {
     const f: Fetcher = async () => ({ info: { next: 'mock://page/' + Math.random() }, results: [{ id: 1, name: 'Variante C-1', status: 'Alive', species: 'Human' }] });

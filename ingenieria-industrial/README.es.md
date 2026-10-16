@@ -8,4 +8,4 @@
 - [Tolerance Stack-up Capability](https://github.com/vincimech010233/tolerance-stackup-capability) — análisis distinto de calidad dimensional y mecánica con holguras hipotéticas, acumulación de tolerancias y métricas de capacidad. No mide el OEE de producción.
 - [ThermoGap](https://github.com/vincimech010233/thermogap) — investigación sobre usar calor residual para producir un producto adicional en la misma fábrica. Incluye revisión de fuentes, casos sintéticos y revisión crítica; no hay software de producción ni validación industrial.
 
-Los dos proyectos responden a preguntas de ingeniería diferentes. El OEE depende de las definiciones de tiempo, ciclo y calidad; las clasificaciones del ejemplo no son recomendaciones operativas para una planta real.
+Estos proyectos responden a preguntas de ingeniería diferentes. El OEE depende de las definiciones de tiempo, ciclo y calidad; las clasificaciones del ejemplo no son recomendaciones operativas para una planta real.

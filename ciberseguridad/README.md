@@ -25,3 +25,7 @@
 - [Metodología de evaluación de seguridad — caso ficticio](fictional-security-assessment.md)
 
 El caso de estudio no describe sistemas u organizaciones reales y no debe interpretarse como una auditoría real.
+
+## Herramienta pequeña de triaje local
+
+- [Inventario ELF local](elf-inventory/README.md) — enumera metadatos ELF básicos con `readelf`. Pruebas sintéticas, sin red y sin ejecutar binarios. No analiza código ni detecta vulnerabilidades. Los informes pueden mostrar rutas locales. Solo para carpetas autorizadas.

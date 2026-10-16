@@ -25,3 +25,7 @@
 - [Security assessment methodology — fictional case](fictional-security-assessment.md)
 
 The case study does not describe real systems or organizations and should not be interpreted as a real audit.
+
+## Small local triage utility
+
+- [Local ELF Inventory](elf-inventory/README.en.md) — lists basic ELF metadata with `readelf`. Synthetic tests, no network, and no binary execution. It does not inspect code or detect vulnerabilities. Reports may show local paths. Use only on authorized folders.

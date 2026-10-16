@@ -12,6 +12,8 @@
 
 ## Repositorio
 
+- [Estudio acotado de seguridad en un proxy inverso](https://github.com/vincimech010233/local-proxy-security-study) — resultado condicionado de un laboratorio local aislado; sin informe al proveedor ni confirmación externa. Los detalles técnicos se mantienen privados mientras se decide cómo actuar con la divulgación.
+
 - [cibersecurity](https://github.com/vincimech010233/cibersecurity) — analizador de registros simulados y resumen de accesos fallidos de solo lectura, escáner TCP con localhost y rango pequeño por defecto, y laboratorio de inyección publicado en loopback. [PR #2 fusionada](https://github.com/vincimech010233/cibersecurity/pull/2) añadió pruebas para esas rutas y amplió CI. Las demás utilidades y laboratorios educativos requieren revisión independiente antes de ejecutarse.
 
 ## Investigación independiente

@@ -12,6 +12,8 @@
 
 ## Repository
 
+- [Scoped reverse-proxy security study](https://github.com/vincimech010233/local-proxy-security-study) — conditional result from an isolated local lab; no vendor report or external confirmation. Technical details are withheld while disclosure decisions remain unresolved.
+
 - [cibersecurity](https://github.com/vincimech010233/cibersecurity) — simulated log analyzer and read-only failed-login summary, TCP scanner with localhost and a small range by default, and an injection lab bound to loopback. [Merged PR #2](https://github.com/vincimech010233/cibersecurity/pull/2) added tests for those paths and expanded CI. Other utilities and educational labs require independent review before use.
 
 ## Independent Research

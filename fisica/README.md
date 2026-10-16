@@ -12,3 +12,6 @@
 - [Fabricación de materiales en microgravedad](orbital-microgravity.md) — propuesta TRL 1 sin prototipo, datos orbitales propios ni validación comercial.
 
 La nota distingue una hipótesis de investigación de resultados demostrados.
+## Related research
+
+- [Biomedical research notes](../biomedical-research/README.md) — two exploratory projects with explicit evidence limits; no clinical or protein-design claims.

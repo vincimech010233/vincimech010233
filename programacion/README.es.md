@@ -4,6 +4,8 @@
 
 ## Repositorios
 
+- [TrustProbe](https://github.com/vincimech010233/trustprobe) — prototipo local en Python con comentarios de IA preparados, comprobaciones sintéticas y límites explícitos; no está validado como herramienta de medición educativa.
+
 - [Colección de proyectos para desarrolladores junior](junior-developer-projects/README.es.md) — 12 ejercicios didácticos en varias tecnologías; datos sintéticos, alcance y estado de verificación documentados.
 - [UncertaintyLab](../uncertaintylab/README.md).
 - [EV Charge Settlement Audit](https://github.com/vincimech010233/ev-charge-settlement-audit) — CLI offline en Python estándar que concilia CSV de sesiones de carga y facturas, con incidencias en JSON y CSV seguro para hojas de cálculo.

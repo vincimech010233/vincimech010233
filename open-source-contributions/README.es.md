@@ -6,6 +6,18 @@ Esta área recoge contribuciones revisadas y aceptadas en proyectos mantenidos p
 
 ## Contribuciones fusionadas
 
+### Microsoft OpenTelemetry Python — corrección de recopilación predeterminada de logs
+
+[Pull request #288](https://github.com/microsoft/opentelemetry-distro-python/pull/288) · [Repositorio original](https://github.com/microsoft/opentelemetry-distro-python)
+
+- Corregí la recopilación predeterminada de logs de Python al asociar el handler de OpenTelemetry al logger raíz cuando el nombre se omite, es vacío o es `None`, manteniendo la protección contra handlers duplicados y el comportamiento de los loggers con nombre.
+- Incorporé y reorganicé 23 casos de regresión en las suites existentes, incluidos niveles, propagación, configuración repetida y desactivación de logs.
+- Añadí cobertura de integración simultánea de Azure Monitor y OTLP, comprobando un solo `LoggingHandler` y `LoggerProvider` con ambos procesadores/exportadores.
+- Incorporé las observaciones del mantenimiento sobre ubicación de las pruebas y documentación concisa. La PR fue aprobada y fusionada en `main` el 16-10-2026.
+- La publicación del paquete está prevista para la primera semana de noviembre de 2026, según el mantenedor; todavía no es una publicación confirmada.
+
+**Evidencia:** [PR fusionada, cambios y revisiones](https://github.com/microsoft/opentelemetry-distro-python/pull/288) · [comentario sobre publicación](https://github.com/microsoft/opentelemetry-distro-python/pull/288#issuecomment-6218513273)
+
 ### PlasmaPy — orientación sobre unidades y partículas en `AGENTS.md`
 
 [Pull request #3388](https://github.com/PlasmaPy/PlasmaPy/pull/3388) · [Repositorio original](https://github.com/PlasmaPy/PlasmaPy)

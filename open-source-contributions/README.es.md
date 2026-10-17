@@ -4,6 +4,19 @@
 
 Esta área recoge contribuciones revisadas y aceptadas en proyectos mantenidos por otras personas. Separa el trabajo incorporado a proyectos externos de los proyectos de mis propios repositorios.
 
+## Contribuciones presentadas (sin fusionar)
+
+### Co4 — metadatos del paquete Python y visibilidad en PyPI
+
+[Pull request #13](https://github.com/JerrettDavis/Co4/pull/13) · [Issue relacionada #12](https://github.com/JerrettDavis/Co4/issues/12)
+
+- Presenté una modificación de `pyproject.toml` para añadir las URLs del proyecto y clasificadores Trove de PyPI, incluido el clasificador de licencia MIT exigido en la issue.
+- Documenté la instalación editable aislada, la construcción de la wheel aislada, la compilación de Python y la comprobación de espacios. La inspección de metadatos de la wheel registró cinco URLs y ocho clasificadores.
+- Resultado comunicado de los tests: 93 superados y 1 fallido; el test fallido esperaba `examples/worker.toml`, ausente y excluido por Git, fuera del alcance del cambio de metadatos.
+- **Estado:** cerrada sin fusionar. Es una contribución propuesta y probada, no un cambio aceptado en el proyecto original; no afirmo que se incorporase la implementación.
+
+**Evidencia:** [PR, diferencias propuestas, comprobaciones y estado final](https://github.com/JerrettDavis/Co4/pull/13)
+
 ## Contribuciones fusionadas
 
 ### Microsoft OpenTelemetry Python — corrección de recopilación predeterminada de logs

@@ -4,6 +4,20 @@
 
 This area records contributions reviewed and accepted in projects maintained by others. It distinguishes upstream work from projects in my own repositories.
 
+## External code review and issue diagnosis
+
+### Dokploy — scheduler backup runtime dependency identified
+
+[Pull request #5349](https://github.com/Dokploy/dokploy/pull/5349) · [Author's follow-up commit `5a7084c`](https://github.com/Dokploy/dokploy/pull/5349/commits/5a7084c)
+
+- Reviewed a third-party proposal introducing Google Drive, OneDrive, FTPS and SFTP backup destinations.
+- Flagged that scheduled password-authenticated FTP/SFTP backup operations call `rclone obscure` via `getRclonePathAndFlags`, while the separate `apps/schedules` Docker runtime did not include the `rclone` executable.
+- Suggested provisioning a pinned, integrity-verified rclone binary in the scheduler image and covering the runtime with a smoke test.
+- The PR author subsequently added rclone to the scheduler image in commit `5a7084c`, explicitly describing this as the scheduler runtime fix. The author later reported an independent 5/5 CI pass and 1,245/1,245 tests passing on a later PR head; these are **author-reported results**, not tests performed by this reviewer.
+- **Status:** Public technical review comment followed by a related fix from the PR author. The PR remained open awaiting upstream review/approval as of 2026-10-17. This is not a claim of authorship of the PR or a merged upstream change.
+
+**Evidence:** [review comment and author response in PR #5349](https://github.com/Dokploy/dokploy/pull/5349)
+
 ## Submitted contributions (not merged)
 
 ### Co4 — Python package metadata and PyPI discoverability

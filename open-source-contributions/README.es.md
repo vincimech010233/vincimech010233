@@ -4,6 +4,20 @@
 
 Esta área recoge contribuciones revisadas y aceptadas en proyectos mantenidos por otras personas. Separa el trabajo incorporado a proyectos externos de los proyectos de mis propios repositorios.
 
+## Revisión de código externo y diagnóstico de incidencias
+
+### Dokploy — detección de una dependencia ausente en el programador de copias de seguridad
+
+[Pull request #5349](https://github.com/Dokploy/dokploy/pull/5349) · [Commit posterior del autor `5a7084c`](https://github.com/Dokploy/dokploy/pull/5349/commits/5a7084c)
+
+- Revisé una propuesta de terceros para incorporar destinos de backup Google Drive, OneDrive, FTPS y SFTP.
+- Señalé que las copias programadas FTP/SFTP autenticadas con contraseña ejecutaban `rclone obscure` mediante `getRclonePathAndFlags`, pero la imagen Docker independiente de `apps/schedules` no incluía el ejecutable `rclone`.
+- Propuse incluir un binario rclone con versión fijada y verificación de integridad en la imagen del programador, más una prueba de humo desde ese entorno.
+- El autor incorporó posteriormente `rclone` a esa imagen en el commit `5a7084c` y describió explícitamente la modificación como corrección del entorno del programador. Después comunicó 5/5 verificaciones CI y 1.245/1.245 pruebas superadas en una versión posterior; son **resultados comunicados por el autor**, no pruebas ejecutadas por mí.
+- **Estado:** comentario público de revisión técnica seguido de una corrección relacionada del autor. La PR seguía abierta, pendiente de revisión y aprobación, a fecha 17-10-2026. No se atribuye autoría de la PR ni integración en el proyecto original.
+
+**Evidencia:** [observación y seguimiento del autor en la PR #5349](https://github.com/Dokploy/dokploy/pull/5349)
+
 ## Contribuciones presentadas (sin fusionar)
 
 ### Co4 — metadatos del paquete Python y visibilidad en PyPI

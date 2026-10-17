@@ -4,6 +4,19 @@
 
 This area records contributions reviewed and accepted in projects maintained by others. It distinguishes upstream work from projects in my own repositories.
 
+## Submitted contributions (not merged)
+
+### Co4 — Python package metadata and PyPI discoverability
+
+[Pull request #13](https://github.com/JerrettDavis/Co4/pull/13) · [Related issue #12](https://github.com/JerrettDavis/Co4/issues/12)
+
+- Submitted a `pyproject.toml` update adding project URLs and PyPI Trove classifiers, including the MIT license classifier required by the issue.
+- Reported successful isolated editable installation, isolated wheel build, Python compilation, and whitespace checks. Wheel metadata inspection reported five project URLs and eight classifiers.
+- Reported test result: 93 passed, 1 failed; the failing distribution test expected an absent, Git-ignored `examples/worker.toml`, outside the metadata-only change.
+- **Status:** Closed without merge. This is a submitted and tested contribution, not an accepted upstream change; no claim is made that the implementation was incorporated.
+
+**Evidence:** [PR, proposed diff, validation notes, and final status](https://github.com/JerrettDavis/Co4/pull/13)
+
 ## Merged contributions
 
 ### Microsoft OpenTelemetry Python — default logging collection fix

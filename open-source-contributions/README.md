@@ -33,6 +33,14 @@ This area records contributions reviewed and accepted in projects maintained by 
 
 ## Merged contributions
 
+### IRONSIGHT — stable strike marker positions
+
+[Repository](https://github.com/NoblerWorks-HQ/IRONSIGHT) · [Pull request #41](https://github.com/NoblerWorks-HQ/IRONSIGHT/pull/41) · [Commit `1aac056`](https://github.com/NoblerWorks-HQ/IRONSIGHT/commit/1aac056) · [Related issue #8](https://github.com/NoblerWorks-HQ/IRONSIGHT/issues/8)
+
+- Removed random coordinate offsets so strike markers stay at their configured place coordinates, and labeled them as approximate place references.
+- The maintainer manually rebased and integrated the contribution into upstream `main`, preserving original authorship and retaining the existing popup escaping calls.
+- **Status:** Merged into `main`; the pull request is closed.
+
 ### Microsoft OpenTelemetry Python — default logging collection fix
 
 [Pull request #288](https://github.com/microsoft/opentelemetry-distro-python/pull/288) · [Upstream repository](https://github.com/microsoft/opentelemetry-distro-python)

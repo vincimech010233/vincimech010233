@@ -33,6 +33,14 @@ Esta área recoge contribuciones revisadas y aceptadas en proyectos mantenidos p
 
 ## Contribuciones fusionadas
 
+### IRONSIGHT — posiciones estables de los marcadores de ataques
+
+[Repositorio](https://github.com/NoblerWorks-HQ/IRONSIGHT) · [Pull request #41](https://github.com/NoblerWorks-HQ/IRONSIGHT/pull/41) · [Commit `1aac056`](https://github.com/NoblerWorks-HQ/IRONSIGHT/commit/1aac056) · [Issue relacionada #8](https://github.com/NoblerWorks-HQ/IRONSIGHT/issues/8)
+
+- Eliminé las variaciones aleatorias de coordenadas para mantener cada marcador en la ubicación configurada, y añadí etiquetas que indican que las referencias son aproximadas.
+- La persona mantenedora rebasó e integró manualmente la contribución en `main`, conservando la autoría original y las llamadas existentes de escape (`esc()`) en los popups.
+- **Estado:** fusionada en `main`; el pull request está cerrado.
+
 ### Microsoft OpenTelemetry Python — corrección de recopilación predeterminada de logs
 
 [Pull request #288](https://github.com/microsoft/opentelemetry-distro-python/pull/288) · [Repositorio original](https://github.com/microsoft/opentelemetry-distro-python)

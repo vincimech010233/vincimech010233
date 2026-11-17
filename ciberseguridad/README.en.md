@@ -18,6 +18,8 @@
 
 ## Independent Research
 
+- [Matomo LoginLdap: LDAP attributes and superuser access](matomo-loginldap/README.en.md) — local test of synchronization and LDAP write permissions; ACL-dependent result classified by Matomo as Informative.
+
 - **Independent Security Research** — Independent software security research through C++ source-code auditing, static analysis, and local testing with AddressSanitizer (ASan).
 
   **Technologies:** C++, AddressSanitizer (ASan), source-code analysis, security testing.

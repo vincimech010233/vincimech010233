@@ -6,6 +6,10 @@
 
 Desarrollo herramientas prácticas y proyectos técnicos reproducibles en software, seguridad defensiva, física e ingeniería. Las páginas de cada área distinguen el trabajo realizado de las competencias que aún estoy desarrollando.
 
+## Proyecto destacado
+
+**[Fovea Gaze Preview](https://github.com/vincimech010233/fovea-gaze-preview#español)** es una herramienta experimental de accesibilidad para Linux. Usa la mirada captada por una webcam para seleccionar y confirmar acciones en un panel local. Las pruebas sintéticas pasan. El control fiable con una webcam real sigue sin validar.
+
 ## Mapa del portfolio
 
 | Área | Proyectos representativos |

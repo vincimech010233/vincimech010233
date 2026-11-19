@@ -6,6 +6,10 @@
 
 I build practical tools and reproducible technical projects across software, defensive cybersecurity, physics, and engineering. The area pages distinguish implemented work from skills I am still developing.
 
+## Featured project
+
+**[Fovea Gaze Preview](https://github.com/vincimech010233/fovea-gaze-preview#english)** is an experimental accessibility tool for Linux. It uses webcam-based gaze to select and confirm actions inside a local browser panel. Synthetic regression tests pass. Reliable control with a real webcam remains unverified.
+
 ## Portfolio map
 
 | Area | Selected evidence |
